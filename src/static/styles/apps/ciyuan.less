@@ -1,0 +1,76 @@
+@import "../global.less";
+.selectsever {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  background-image: url(../../images/login/select-bg.jpg);
+  background-size: 100% 100%;
+  color: #fff;
+  max-width: @max_width;
+  //display: none;
+  .re-login {
+    width: 30px;
+    position: absolute;
+    left: 20px;
+    top: 4%;
+    border-radius: 5px;
+    img {
+      width: 100%;
+    }
+  }
+  p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+  }
+  .selectbox {
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    background-color: rgba(22, 22, 34, 0.4);
+    height: 170px;
+    font-size: 16px;
+    .weui-cell_select .weui-cell__bd:after {
+      z-index: 999;
+      right: 25px;
+    }
+    .weui-cell__bd {
+      background: #fff;
+      margin: 10px;
+      .weui-input{
+        color: black;
+        padding-left: 10px;
+        width: 80%;
+      }
+    }
+    .weui-select {
+      height: 30px;
+      line-height: 30px;
+    }
+    .weui-label {
+      width: 80px;
+    }
+    .weui-cell_select-after .weui-select {
+      padding-left: 10px;
+    }
+
+    .weui-cells__tips{
+      margin-top: 0;
+      color: red;
+    }
+  }
+  .btn-box {
+    width: 100%;
+    bottom: 6%;
+    position: absolute;
+    text-align: center;
+    img {
+      width: 75%;
+    }
+  }
+}

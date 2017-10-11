@@ -1,0 +1,157 @@
+body {
+
+    background: #009688;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+* {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.shanDeng {
+    width: 95%;
+    height: 95%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 5px auto 0 auto;
+    padding: 5px 0 10px 0px;
+}
+
+/*	.shanDeng{
+		background-image: url(../img/shandeng1.png);
+	}
+	.shanDeng2{
+		background-image: url(../img/shandeng2.png);
+	}*/
+
+#btn .cjBtnDom, #btn .cjBtn, #luck .active, #luck td {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#luck td {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#luck td img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    left: 0;
+    top: 0;
+    /*opacity: 0.6;*/
+    left: 50%;
+    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    padding: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+#luck .active {
+    background-image: url(../images/zhuanpan/img/active1.gif);
+}
+
+.shanDeng td {
+    text-align: center;
+    background-image: url(../images/zhuanpan/img/proBj.png);
+    background-size: 100% 100%;
+}
+
+#btn {
+    background: url(../images/zhuanpan/img/buttonUp.png) no-repeat 50% 50% !important;
+    background-size: 95% 95% !important;
+}
+
+.quan-no {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 18%;
+    color: #b91d59;
+    font-size: 15px;
+}
+
+.tips {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 8%;
+    color: #b91d59;
+    font-size: 10px;
+}
+
+#showprizeimg {
+    max-height: 60%;
+    max-width: 80%;
+    /*position: absolute;*/
+    display: none;
+    margin:0 auto;
+
+}
+
+.quan-no :nth-child(2) {
+    /*font-family: PressStart;*/
+    color: #581056;
+}
+
+@font-face {
+    font-family: 'PressStart';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Press Start 2P'), local('PressStart2P-Regular'), url(../fonts/xiangsu.woff) format('woff');
+}
+
+.prize-name {
+    height: 20px;
+    /*position: absolute;*/
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 10px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.prize-name span {
+    position: relative;
+    z-index: 10;
+}
+
+#andyscroll {
+    overflow: hidden;
+    width: 100%;
+    height: 64px;
+    overflow: hidden;
+}
+
+#andyscroll li {
+    width: 100%;
+    text-decoration: none;
+    display: block;
+}
+
+.box-shadow1 {
+    -moz-box-shadow: 0px 0px 20px #fed302 inset; /* For Firefox3.6+ */
+    -webkit-box-shadow: 0px 0px 20px #fed302 inset; /* For Chrome5+, Safari5+ */
+    box-shadow: 0px 0px 20px #fed302 inset; /* For Latest Opera */
+}
+
+@media screen and (max-width: 360px) {
+    #andyscroll {
+        height: 50px;
+    }
+}
+

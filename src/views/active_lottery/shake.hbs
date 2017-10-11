@@ -1,0 +1,94 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/activelottery.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/styleCJ.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/shakenum.css'/>
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/shakenum.js"></script>
+    <script src="{{@static_url}}/scripts/shake.js"></script>
+    <script src="{{@static_url}}/scripts/active/active3.js"></script>
+{{/section}}
+
+<div class="frm">
+    <div class="mark">
+        <div class="va-mid">
+            <img id="swing-img" src="{{@static_url}}/images/shakenum/swing.png">
+        </div>
+    </div>
+    <div class="top">
+        <div class="user-info">
+            <div class="left">
+                <img class="headimg" src="{{@static_url}}/images/active-imgs/head.png" alt="">
+                <div>
+                    <span class="user-name">\{{uinfo.nickName}}</span>
+                </div>
+            </div>
+            <div class="right">
+                <span>\{{binfo.personQuota}}</span>
+                <span>现金额度</span>
+            </div>
+        </div>
+        <div class="list">
+            <div class="big-prize">大奖记录</div>
+
+            <div id="andyscroll">
+                <div id="scrollmessage">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fuli">
+        <div class="big-prize">福利区</div>
+        <div>
+            <div class="five-num">
+                <div class="num_box">
+                    <div>
+                        <div class="num num1"></div>
+                    </div>
+                    <div>
+                        <div class="num num1"></div>
+                    </div>
+                    <div>
+                        <div class="num num1"></div>
+                    </div>
+                    <div>
+                        <div class="num num2"></div>
+                    </div>
+                    <div>
+                        <div class="num num2"></div>
+                    </div>
+                </div>
+                <div class="btnbox">
+                    <div id="gbtn" class="gbtn">点击开始</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fuliquan">
+        <div class="big-prize">福利券</div>
+        <div class="box">
+            <div class="left">
+                <div id="commonTicket" class="quan">抽奖机会</div>
+                <div id="commonno" class="no">\{{binfo.lottery6}}次</div>
+            </div>
+            <!--<div class="right">-->
+                <!--<div id="seniorTicket" class="quan">精英券</div>-->
+                <!--<div id="seniorno" class="no">\{{binfo.lottery2}}张</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="gainingmask">
+        <div class="light">
+            <img id="light1" class="l1" src="{{@static_url}}/images/active-imgs/light1.png">
+            <img id="light2" class="l2" src="{{@static_url}}/images/active-imgs/light2.png">
+        </div>
+        <div class="gbox">
+            <div class="g-word">恭喜你抽到了<span id="prizedot"></span>点</div>
+            <div class="gbtn">朕知道了</div>
+        </div>
+    </div>
+</div>

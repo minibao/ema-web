@@ -1,0 +1,319 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/activelottery.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/styleCJ.css'/>
+{{/section}}
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/shakenum.js"></script>
+    <script src="{{@static_url}}/scripts/active/zhuanpan.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+{{/section}}
+<div class="frm">
+    <div class="top">
+        <!--<div class="user-info">-->
+        <!--<div class="left">-->
+        <!--<img class="headimg" src="{{@static_url}}/images/active-imgs/head.png" alt="">-->
+        <!--<div>-->
+        <!--<span class="user-name">\{{uinfo.nickName}}</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<span>\{{binfo.personQuota}}</span>-->
+        <!--<span>柠檬点</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="list">
+            <div class="big-prize">大奖记录</div>
+
+            <div id="andyscroll">
+                <div id="scrollmessage">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fuli">
+        <div class="big-prize">福利区</div>
+        <div class="zhuanpan">
+            <div class="shanDeng" id="deng">
+                <div id="luck">
+                    <!-- luck -->
+                    <table>
+                        <tr>
+                            <td class="luck-unit luck-unit-0"></td>
+                            <td class="luck-unit luck-unit-1"></td>
+                            <td class="luck-unit luck-unit-2"></td>
+                            <td class="luck-unit luck-unit-3"></td>
+                            <td class="luck-unit luck-unit-4"></td>
+                        </tr>
+                        <tr>
+                            <td class="luck-unit luck-unit-15"></td>
+                            <td rowspan="3" colspan="3" class="cjBtn" id="btn">
+                                <!--<img src="{{@static_url}}/images/zhuanpan/img/buttonUp1.png">-->
+                                <div class="quan-no"><span>福利券&nbsp&nbsp</span><span>\{{binfo.lottery1}}</span></div>
+                                <div class="tips">抽30次必中<span>\{{prizeList[6].prizeName}}</span>,剩余\{{prizeList[6].prizeNum}}个</div>
+                            </td>
+                            <td class="luck-unit luck-unit-5"></td>
+                        </tr>
+                        <tr>
+                            <td class="luck-unit luck-unit-14"></td>
+                            <td class="luck-unit luck-unit-6"></td>
+                        </tr>
+                        <tr>
+                            <td class="luck-unit luck-unit-13"></td>
+                            <td class="luck-unit luck-unit-7"></td>
+                        </tr>
+                        <tr>
+                            <td class="luck-unit luck-unit-12"></td>
+                            <td class="luck-unit luck-unit-11"></td>
+                            <td class="luck-unit luck-unit-10"></td>
+                            <td class="luck-unit luck-unit-9"></td>
+                            <td class="luck-unit luck-unit-8"></td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- luckEnd -->
+            </div>
+        </div>
+    </div>
+    <div class="fuliquan">
+        <div class="big-prize">福利券</div>
+        <div class="box">
+            <div style="padding:20px 24px 40px 24px; color:#fff79a">
+                <img style="width: 104%;margin-left: -2%;" id="getcard"  src="{{@static_url}}/images/active-imgs/getcard.jpg">
+                <p>◆ 福利券来源于次元大作战中PVP模式(非人机)胜场</p>
+                <p>◆ 每日胜利场数达到1/3/5/8/10时分别奖励一张福利券</p>
+                <p>◆ 奖品会定期更新</p>
+                <p>◆ 使用分享功能有机会获得福利券</p>
+                <p>◆ 周排行每周给前50名发放不同数量福利券</p>
+
+                <!--<div @click="battleSendLottery">点击领奖</div>-->
+            </div>
+            <div style="left:25%;display: none;" class="left">
+                <div id="commonTicket" class="quan">福利券</div>
+                <div id="commonno" class="no">\{{binfo.lottery1}}张</div>
+            </div>
+            <!--<div class="right">-->
+            <!--<div id="seniorTicket" class="quan">精英券</div>-->
+            <!--<div id="seniorno" class="no">\{{binfo.lottery2}}张</div>-->
+            <!--<img id="add-senior" class="add" src="{{@static_url}}/images/active-imgs/jingyin-add.png" alt="">-->
+            <!--</div>-->
+            <!--<img class="rule" src="{{@static_url}}/images/active-imgs/rule.png" alt="">-->
+        </div>
+    </div>
+    <div id="gainingmask" class="gainingmask">
+        <div class="light">
+            <img id="light1" class="l1" src="{{@static_url}}/images/active-imgs/light1.png">
+            <img id="light2" class="l2" src="{{@static_url}}/images/active-imgs/light2.png">
+        </div>
+        <div class="gbox">
+            <div class="g-word">
+                <span id="prizedot"></span>
+                <span style="display:none;" id="tks"><img style="width: 100px;" src="{{@static_url}}/images/zhuanpan/cry.png"></span>
+                <img id="showprizeimg" style="" src="">
+            </div>
+            <div class="gbtn">再来一次</div>
+            <div id="gotoprize" class="gbtn1">前去领奖</div>
+        </div>
+    </div>
+    <div id="gainingmask2" class="gainingmask gainingmask2">
+        <div class="light">
+            <img id="light1" class="l1" src="{{@static_url}}/images/active-imgs/light1.png">
+            <img id="light2" class="l2" src="{{@static_url}}/images/active-imgs/light2.png">
+        </div>
+        <div class="gbox">
+            <div class="g-word">恭喜你抽中柠檬点！</div>
+            <div class="gbtn">再来一次</div>
+            <div class="num_box">
+                <div>
+                    <div class="num"></div>
+                </div>
+                <div>
+                    <div class="num"></div>
+                </div>
+                <div>
+                    <div class="num num2"></div>
+                </div>
+                <div>
+                    <div class="num num2"></div>
+                </div>
+
+                <div style="display: none" class="btn">恭喜你摇中了<span id="min-shake" style="color:#B6FF00">1.33</span>点
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="gainingmask3" class="showimgBig">
+        <div class="gbox">
+            <div class="g-word">
+                <span id="showimgBigName"></span>
+                <span style="padding: 0 .5em;" id="tks"><img style="max-width: 80%;max-height: 60%;" src=""></span>
+            </div>
+            <div style="bottom: 30px;" class="gbtn3">确定</div>
+        </div>
+    </div>
+    <div class="rulebox">
+        <div class="big-prize">----规则----</div>
+        <div class="box">
+            <div>
+                <p>◆ 福利券来源于游戏中PVP模式(非人机)胜场</p>
+                <p>◆ 胜利场数达到1/3/5/8/10时分别奖励一张福利券, 一个角色最多五张/天</p>
+                <p>◆ 抽中游戏道具后请前往个人中心领取奖励</p>
+                <p>◆ 柠檬点数后期可用于更高级的抽奖(敬请期待哟~)</p>
+                <p>◆ 请在个人中心填写本人真实信息便于发放实物奖品</p>
+            </div>
+            <div>(点任意地方退出)</div>
+        </div>
+    </div>
+</div>
+
+{{> addSenior}}
+<script>
+    $(function () {
+        //界面控制
+        ctrl_screen();
+    })
+
+    var luck = {
+        index: -1, //当前转动到哪个位置，起点位置
+        count: 0, //总共有多少个位置
+        timer: 0, //setTimeout的ID，用clearTimeout清除
+        speed: 40, //初始转动速度
+        times: 0, //转动次数
+        cycle: 90, //转动基本次数：即至少需要转动多少次再进入抽奖环节
+        prize: -1, //中奖位置
+        init: function (id) {
+            if ($("#" + id).find(".luck-unit").length > 0) {
+                $luck = $("#" + id);
+                $units = $luck.find(".luck-unit");
+                this.obj = $luck;
+                this.count = $units.length;
+                $luck.find(".luck-unit-" + this.index).addClass("active");
+            }
+        },
+        loadingjiangping: function (list) {
+            console.log(list);
+            var t = $('.zhuanpan').find('.luck-unit');
+            var img = '<img src="">';
+            var str = '<div class="prize-name"><span></span></div>' + img;
+            $('.zhuanpan .luck-unit').html(str);
+            for (var i = 0; i < list.length; i++) {
+                var classname = '.luck-unit-' + i + ' .prize-name span';
+                var classimg = '.luck-unit-' + i + ' img';
+                var classnameluck = '.luck-unit-' + i;
+                //有‘（’就换行
+                var br = list[i].prizeName;
+                br = br.split('(');
+
+                if (br.length > 1) {
+                    br = br[0] + '<br>' + '(' + br[1];
+                }
+                $(classname).html(br);
+                $(classimg).attr('src', '{{@static_url}}/imgs_static/zhuanpan/' + list[i].prizeId + '.png');
+                $(classnameluck).attr('orderId', i + 1);
+                $(classnameluck).attr('prizeId', list[i].prizeId);
+                $(classnameluck).attr('prizeName', list[i].prizeName);
+            }
+        },
+        roll: function () {
+            var index = this.index;
+            var count = this.count;
+            var luck = this.obj;
+            $(luck).find(".luck-unit-" + index).removeClass("active");
+            index += 1;
+            if (index > count - 1) {
+                index = 0;
+            }
+            $(luck).find(".luck-unit-" + index).addClass("active");
+            this.index = index;
+            return false;
+        },
+        stop: function (index) {
+            this.prize = index;
+            return false;
+        }
+    };
+
+    function roll() {
+        luck.times += 1;
+        luck.roll();
+        if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
+            clearTimeout(luck.timer);
+            luck.prize = -1;
+            luck.times = 0;
+            click = false;
+        } else {
+            if (luck.times < luck.cycle) {
+                luck.speed -= 10;
+            } else if (luck.times == luck.cycle) {
+//                var index = Math.random() * (luck.count) | 0;
+//                luck.prize = index;
+            } else {
+                if (luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
+                    luck.speed += 110;
+                } else {
+                    luck.speed += 20;
+                }
+            }
+            if (luck.speed < 40) {
+                luck.speed = 40;
+            }
+
+            luck.timer = setTimeout(roll, luck.speed);
+        }
+
+        setTimeout(function () {
+            $("body").unbind("touchmove");
+        }, 5000);
+        return false;
+    }
+
+    var click = false;
+    function ctrl_screen() {
+        window.topl = $(".list").offset().top + 100;
+        var w = $("#luck td").width();
+        $("#luck td").height(w * 0.86);
+        $("#luck .active").height(w * 0.86);
+        $(".shanDeng td").height(w * 0.86);
+        $('.prize-name').height($("#luck td").height() * 0.33);
+    }
+
+    //下面全是控制滚动文字
+    var stopscroll = false;
+    var scrollElem = document.getElementById("andyscroll");
+    var marqueesHeight = scrollElem.style.height;
+    scrollElem.onmouseover = new Function('stopscroll = true');
+    scrollElem.onmouseout = new Function('stopscroll = false');
+    var preTop = 0;
+    var currentTop = 0;
+    var stoptime = 0;
+    var leftElem = document.getElementById("scrollmessage");
+    scrollElem.appendChild(leftElem.cloneNode(true));
+    init_srolltext();
+
+    function init_srolltext() {
+        scrollElem.scrollTop = 0;
+        setInterval('scrollUp()', 60); //确定滚动速度的, 数值越小, 速度越快
+    }
+
+    function scrollUp() {
+        if (stopscroll) return;
+        currentTop += 2; //设为1, 可以实现间歇式的滚动; 设为2, 则是连续滚动
+        if (currentTop == 19) {
+            stoptime += 1;
+            currentTop -= 1;
+            if (stoptime == 180) {
+                currentTop = 0;
+                stoptime = 0;
+            }
+        } else {
+            preTop = scrollElem.scrollTop;
+            scrollElem.scrollTop += 1;
+            if (preTop == scrollElem.scrollTop) {
+                scrollElem.scrollTop = 0;
+                scrollElem.scrollTop += 1;
+            }
+        }
+    }
+</script>

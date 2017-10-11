@@ -1,0 +1,64 @@
+@import "global.less";
+
+html {
+  font-size: 625%;
+}
+
+body {
+  font-size: 12px;
+}
+
+ul {
+  list-style: none;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.clear-fix {
+  overflow: hidden;
+}
+
+.container {
+  max-width: @max_width;
+  margin: auto;
+}
+
+.page {
+  background-color: #fff;
+}
+
+.input-box {
+  padding: 0 9px;
+  line-height: 28px;
+  font-size: 14px;
+  color: #333;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  border-right-color: #ccc;
+  border-bottom-color: #ccc;
+  outline: 0;
+}
+
+//weui back
+.weui-badge {
+  &.badge-back {
+    position: absolute;
+    top: -2px;
+    right: -13px;
+  }
+}
+
+.weui_loading_toast .weui_toast_content {
+  font-size: 12px;
+}
+
+//*必填
+.must-in {
+  padding: 0 5px;
+  line-height: 30px;
+  color: #ff552e;
+  font-weight: 700;
+  font-size: 16px;
+}

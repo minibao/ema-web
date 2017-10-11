@@ -1,0 +1,38 @@
+.frm {
+  width: 100%;
+  height: 100%;
+  background: url(../../images/usercenter/fulisharebg.jpg) no-repeat;
+  background-size: 100%;
+  overflow: auto;
+}
+.frm .girls {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+}
+.frm .btns {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+.frm .btns .down {
+  width: 80%;
+  background: #db6a9c;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  border-radius: 8px;
+  line-height: 40px;
+  color: #fff;
+}
+.frm .btns .login {
+  width: 80%;
+  background: #3c7ce6;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 8px;
+  line-height: 40px;
+  color: #fff;
+}

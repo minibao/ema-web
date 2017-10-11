@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>EMA</title>
+</head>
+<body>
+<a class="right" id="qqLoginBtn">
+    <i class="icon sprite-icon_qq_login"></i>
+</a>
+</body>
+</html>
+
+<script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="{{@static_url}}/lib/qc_loader.js" data-appid="101399880"
+        data-redirecturi="https://social.lemonade-game.com" charset="utf-8"></script>
+<script>
+    QC.Login({
+        btnId: "qqLoginBtn",
+        scope: "all",
+        size: "A_XL"
+    });
+    setTimeout(function () {
+        $('#qqLoginBtn a').html('');
+        $('#qqLoginBtn a').html('<i class="icon sprite-icon_qq_login"></i>');
+    }, 10);
+    var paras = {};
+    var timer1 = setInterval(function () {
+        QC.api("get_user_info", paras)
+                .success(function (s) {
+                    console.log(s);
+                })
+                .error(function (f) {
+                    alert("获取用户信息失败！");
+                })
+                .complete(function (c) {
+                    alert("获取用户信息完成！");
+                });
+
+        if (QC.Login.check()) {
+            QC.Login.getMe(function (openId, accessToken) {
+                console.log(openId);
+                console.log(accessToken);
+                clearInterval(timer1);
+            });
+        }
+    }, 5000)
+
+</script>

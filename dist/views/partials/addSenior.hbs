@@ -1,0 +1,93 @@
+<script src="{{@static_url}}/scripts/active/addsenior.f152bfa3.js"></script>
+<script src="{{@static_url}}/scripts/pay.4520f791.js"></script>
+<script src="{{@static_url}}/scripts/pay/wxpay.3dc379ed.js"></script>
+
+
+<div id="addS" class="addSenior">
+    <div class="topbar">
+        <p>柠檬点充值</p>
+        <img id="addS-close" src="{{@static_url}}/images/active-imgs/close.22ece7fe.png" alt="">
+    </div>
+    <div class="useryu">
+        <div>
+            <span>昵&nbsp;&nbsp;&nbsp;称:</span>
+            <span>\{{uinfo.nickName}}</span>
+        </div>
+        <div>
+            <span>柠檬点:</span>
+            <span>\{{binfo.personQuota}}</span>
+        </div>
+    </div>
+    <div class="c1-6-10">
+        <div>
+            <span>充值金额:</span>
+            <span>
+                <input id="jingying_num" style="width: 45px; text-align: center; box-shadow: inset 0px 0px 7px #e0f3f1;" class="weui-input" v-model="account" type="number" placeholder="0"/>
+                <span>元</span><span style="color:#c5c5c5;font-size: 12px">&nbsp;&nbsp;&nbsp;(1元=100柠檬点)</span>
+            </span>
+        </div>
+        <!--<div>-->
+            <!--<span>快速选择金额:</span>-->
+        <!--</div>-->
+        <div class="chooseyuan">
+            <div class="oneyuan"><img jine="3" src="{{@static_url}}/images/active-imgs/three.5edfa0b3.png" alt=""></div>
+            <div class="sixyuan">
+                <img jine="6" src="{{@static_url}}/images/active-imgs/six.a9a6eac5.png" class="yuanactive" alt="">
+                <img class="hot" src="{{@static_url}}/images/active-imgs/HOT.4fc392e0.png" alt="">
+            </div>
+            <div class="tenyuan"><img jine="10" src="{{@static_url}}/images/active-imgs/ten.e0049b33.png" alt=""></div>
+        </div>
+    </div>
+
+    <div class="zhifubtn">
+        <div>
+            <span>请选择支付方式:</span>
+        </div>
+        <div class="btns">
+            <div id="wxpay" class="zhifutype">
+                <img id="wxpaybtn" src="{{@static_url}}/images/active-imgs/weixin.789ff774.png" alt="">
+                <p>微信</p>
+            </div>
+            <div class="zhifutype">
+                <img id="zhifubao" src="{{@static_url}}/images/active-imgs/zhifubao.2424d97b.png" alt="">
+                <p>支付宝</p>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: none" class="aSbox">
+        <div class="xianjin">
+            <span>柠檬点：</span><span><!--\{{binfo.personQuota}}-->100</span>
+            <span class="mg10">购买数量：</span>
+            <div class="weui-cell">
+                <div class="weui-cell__bd">
+                    <input id="jingying_num" class="weui-input" v-model="account" type="text" placeholder="1"/>
+                </div>
+            </div>
+            <div class="minword"><span>单价：1元</span></div>
+            <div class="btn">
+                <div id="wxpay" class="left">
+                    <img id="wxpaybtn" src="{{@static_url}}/images/active-imgs/weixin.789ff774.png" alt="">
+                    <p>微信</p>
+                </div>
+                <div class="right">
+                    <img id="zhifubao" src="{{@static_url}}/images/active-imgs/zhifubao.2424d97b.png" alt="">
+                    <p>支付宝</p>
+                </div>
+            </div>
+            <!--<div class="btn">-->
+            <!--<div class="left" >-->
+
+            <!--<img id="zhima" src="{{@static_url}}/images/active-imgs/zhima.755c8787.png" alt="">-->
+            <!--<p>芝麻信用</p>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!--<div class="xianjin">-->
+        <!--&lt;!&ndash;<span>平台币：</span><span>99.99</span>&ndash;&gt;-->
+        <!--<span class="">购买数量：</span><span>1</span>-->
+        <!--<div class="minword"><span>单价：10平台币(本次使用游戏中的游戏币)</span></div>-->
+        <!--<div class="btn"><span style="border: 1px solid #fff;padding: 1px 6px;" id="btn-addpfb">确定</span></div>-->
+        <!--</div>-->
+    </div>
+</div>

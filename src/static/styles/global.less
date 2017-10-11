@@ -1,0 +1,10 @@
+@import "lesshat.less";
+
+@static_path : "../images/";
+@max_width : 800px;
+
+//Cober
+.setBgUrl(@path,@root_path:@static_path){
+  background-image: url("@{root_path}@{path}");
+  background-repeat: no-repeat;
+}

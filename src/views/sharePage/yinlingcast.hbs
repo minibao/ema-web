@@ -1,0 +1,302 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+<script src="{{@static_url}}/lib/vue.min.js"></script>
+<script src="{{@static_url}}/scripts/common.js"></script>
+<script src="{{@static_url}}/lib/layer/layer.js"></script>
+<script src="{{@static_url}}/scripts/sharePage/yinlingcast.js"></script>
+<style>
+    html, body {
+        margin: 0;
+        max-width: 600px;
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        max-height: 1000px;
+    }
+
+    .frm {
+        width: 100%;
+        height: 100%;
+        background: url(../../static/images/yinling/bg.jpg) no-repeat;
+        background-size: 100%;
+        overflow: auto;
+    }
+
+    .word {
+        color: #fff;
+        padding: 30px 20px 5px 20px;
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-shadow: 0 0 1em #be4ab4, 0 0 3px rgba(190, 74, 180, 0.44);
+        font-weight: 700;
+    }
+
+    .libao {
+        color: #fff;
+        padding: 10px 20px;
+        overflow: hidden;
+    }
+
+    .libao p {
+        font-size: 18px;
+        font-weight: 700;
+        height: 20px;
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 20px;
+    }
+
+    #li-code {
+        width: 180px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        background: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        float: left;
+    }
+
+    .down {
+        text-align: center;
+        position: relative;
+        top: 7%;
+        display: none;
+    }
+
+    .qrcode {
+        width: 100px;
+        position: relative;
+        top: 10px;
+    }
+
+    .downbtn {
+        width: 200px;
+    }
+    .mask{
+        display: none;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.83);
+    }
+    .d {
+        width: 100%;
+        height: 50px;
+        position: relative;
+        top: 30%;
+        color: #fff;
+        font-size: 16px;
+        padding-left: 15%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        text-align: left;
+        letter-spacing: 2px;
+    }
+    .ti {
+        padding: 0px 0px 0px 3px;
+        height: 25px;
+        width: 25px;
+        background: #be4ab4;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 25px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-right: 20px;
+    }
+
+    #add {
+        width: 13px;
+        padding: 3px 14px;
+        background: #535454;
+        margin: 5px 5px 0px 5px;
+        border-radius: 20px 4px;
+    }
+
+    #browser {
+        width: 25px;
+        margin: 0px 5px;
+    }
+
+    .sp {
+        position: relative;
+        top: 7px;
+    }
+
+    .se {
+        height: 25px;
+        padding: 3px 5px;
+        background: #535454;
+        border-radius: 20px 4px;
+    }
+    .arrow{
+        top: 2%;
+        position: absolute;
+        right: 0px;
+        width: 20%;
+    }
+    .participant{
+        width: 100px;
+        /*float: left;*/
+        height: auto;
+        position: relative;
+        top: -8px;
+        left: 20px;
+    }
+
+    @media screen and (max-width: 360px) {
+        .word {
+            padding: 15px;
+            font-size: 10px;
+            padding-bottom: 0px;
+        }
+
+        .libao {
+            padding: 0px 20px;
+        }
+
+        .down {
+            top: 5%;
+        }
+
+        .libao p {
+            font-size: 15px;
+            font-weight: 600;
+            height: 5px;
+        }
+
+        #li-code {
+            width: 150px;
+            height: 20px;
+            line-height: 20px;
+            font-size: 15px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .participant {
+            width: 80px;
+            /*float: left;*/
+            height: auto;
+            position: relative;
+            top: -8px;
+            left: 20px;
+        }
+
+        .downbtn {
+            width: 150px;
+        }
+
+        .qrcode {
+            width: 80px;
+            position: relative;
+            top: 10px;
+        }
+        .d{
+            font-size: 15px;
+            padding-left: 10%;
+        }
+    }
+
+    @-webkit-keyframes bounceInUp {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(2000px);
+            transform: translateY(2000px)
+        }
+
+        60% {
+            opacity: 1;
+            -webkit-transform: translateY(-30px);
+            transform: translateY(-30px)
+        }
+
+        80% {
+            -webkit-transform: translateY(10px);
+            transform: translateY(10px)
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0)
+        }
+    }
+
+    @keyframes bounceInUp {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(2000px);
+            -ms-transform: translateY(2000px);
+            transform: translateY(2000px)
+        }
+
+        60% {
+            opacity: 1;
+            -webkit-transform: translateY(-30px);
+            -ms-transform: translateY(-30px);
+            transform: translateY(-30px)
+        }
+
+        80% {
+            -webkit-transform: translateY(10px);
+            -ms-transform: translateY(10px);
+            transform: translateY(10px)
+        }
+
+        100% {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0)
+        }
+    }
+
+    .bounceInUp {
+        -webkit-animation: bounceInUp 1s ;
+        animation: bounceInUp 1s ;
+    }
+</style>
+<div id="app" class="frm">
+    <div class="word">
+        <p style="line-height: 20px;">
+            想爽快抽奖体会土豪抽抽抽的乐趣吗？想在英灵体会一把Master坐拥后宫的快感吗？那就不要犹豫啦，赶紧下载英灵召唤师，参与活动，海量福利精致周边等待您的领取！现在下载还有新手专属福利礼包等您来拿哦~</p>
+        <p style="height: 10px;">福利获取活动规则如下：</p>
+        <p>A：英灵召唤师天梯等级到达勇者3，累计获得福利券*10</p>
+        <p>B：英灵召唤师天梯等级到达大师1，累计获得福利券*24</p>
+        <p>C：英灵召唤师天梯等级到达大师3，累计获得福利券*36</p>
+        <p style="font-size: 10px;">注: 请在英灵召唤师中使用福利社登录时的账密</p>
+    </div>
+    <div class="libao">
+        <p>英灵召唤师新手礼包码</p>
+        <div id="li-code"></div>
+        <img class="participant" src="{{@static_url}}/images/yinling/participant.png" alt="">
+    </div>
+    <div class="down">
+        <div class="down-btn">
+            <img class="downbtn" src="{{@static_url}}/images/yinling/btn.png" alt="">
+        </div>
+        <div class="qr-code">
+            <img class="qrcode" src="{{@static_url}}/images/yinling/qrcode.jpg" alt="">
+        </div>
+    </div>
+</div>
+
+<div id="mask" class="mask">
+    <div class="d">
+        <span class="ti">1</span><span>点击右上角的<span class="sp"><img id="add" src="{{@static_url}}/images/yinling/add.png" alt=""></span>按钮</span>
+    </div>
+    <div class="d">
+        <span class="ti">2</span>选择
+        <span>
+            <span class="se"><span class="sp">
+                <img id="browser" src="{{@static_url}}/images/yinling/browser.png" alt="">
+            </span>在浏览器中打开</span>
+        </span>
+    </div>
+    <img class="arrow" src="{{@static_url}}/images/yinling/arrow.png" alt="">
+</div>

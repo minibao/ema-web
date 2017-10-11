@@ -1,0 +1,273 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/activelottery.e179e20d.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/usercenter.ed88acdc.css'/>
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/yinling/usercenter.52473daf.js"></script>
+    <script src="{{@static_url}}/lib/layer/layer.js"></script>
+    <script src="{{@static_url}}/lib/common.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="{{@static_url}}/scripts/others/mobileBUGFix.mini.7cd1795a.js"></script>
+{{/section}}
+
+<div class="frm">
+
+    <div class="headmask">
+        <div class="h-imgbox">
+            <img id="headmaskclosed" src="{{@static_url}}/images/usercenter/closed.6d9917a8.png" alt="">
+            <div class="rotateImgBox">
+                <img id="rotateImg" src="" alt="">
+            </div>
+            <div class="hmbtn">
+                <span>
+                    <img id="rotateBtn" src="{{@static_url}}/images/usercenter/rotate-right.162c7d46.png" alt="">
+                    <img id="uploadImg" src="{{@static_url}}/images/usercenter/OK.fc09bbc4.png" alt="">
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="top">
+        <div class="left">
+            <div class="headbox">
+                <img id="cl-img-input" src="" alt="">
+                <input style="display: none;" name="file" accept="image/jpeg" type="file" id="imgFileId" multiple>
+                <span>
+                    <img src="{{@static_url}}/images/usercenter/ico001.1b8e0d73.png" alt="">
+                </span>
+            </div>
+        </div>
+        <div class="right">
+            <p style="position: relative;">\{{uinfo.nickName}}<span>
+                <img class="seximg" id="girl" value="2" src="{{@static_url}}/images/usercenter/gender-ico.7716e502.png" alt="">
+                <img class="seximg" value="1" style="display:none;" id="boy"
+                     src="{{@static_url}}/images/usercenter/gender-ico1.87223b02.png" alt="">
+            </span>
+                <img id="sharebtn" style="position: absolute;right: 8px;"
+                     src="{{@static_url}}/images/usercenter/sharebtn.9f26056c.png" alt="">
+            </p>
+            <p id="Recharge" style="position: relative;">
+                <span>
+                    <span>柠檬点：</span>
+                    <span id="nmpot" style="color:#f68888">\{{binfo.personQuota}}</span>
+                </span>
+                <span><img id="Recharge" style="position: absolute;"
+                           src="{{@static_url}}/images/usercenter/Recharge.eb018980.gif" alt=""></span>
+            </p>
+            <p id="info-describe" class="p2">你的帅气签名~~~~</p>
+        </div>
+    </div>
+    <div class="info">
+        <div class="infobar">
+            <div class="bars bars-active">
+                <p>个人中心</p>
+            </div>
+            <div class="bars">
+                <p>中奖列表 <span class="weui-badge badge-back">\{{count_unsend}}</span></p>
+            </div>
+            <div class="bars">
+                <p>柠檬兑换</p>
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="infoinput">
+                <div class="in">
+                    <div class="left">昵称</div>
+                    <div class="weui-cell right">
+                        <div class="weui-cell__hd"></div>
+                        <div class="weui-cell__bd">
+                            <input id='name' class="weui-input" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <span class="must-in">*</span>
+                </div>
+                <div class="in">
+                    <div class="left">手机</div>
+                    <div class="weui-cell right">
+                        <div class="weui-cell__hd"></div>
+                        <div class="weui-cell__bd">
+                            <input id='phone' class="weui-input" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <span class="must-in">*</span>
+                </div>
+                <div class="in">
+                    <div class="left">姓名</div>
+                    <div class="weui-cell right">
+                        <div class="weui-cell__hd"></div>
+                        <div class="weui-cell__bd">
+                            <input id='Rname' class="weui-input" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <span class="must-in">*</span>
+                </div>
+                <div class="in">
+                    <div class="left">QQ</div>
+                    <div class="weui-cell right">
+                        <div class="weui-cell__hd"></div>
+                        <div class="weui-cell__bd">
+                            <input id='QQ' class="weui-input" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+                <div class="in">
+                    <div class="left">地址</div>
+                    <div class="weui-cell right">
+                        <div class="weui-cell__hd"></div>
+                        <div class="weui-cell__bd">
+                            <input id='ads' class="weui-input" type="text" placeholder="">
+                        </div>
+
+                    </div>
+                </div>
+                <div style="padding-left: 25%;color: #ff552e;">
+                    <p>(请填写正确且可邮寄地址)</p>
+                </div>
+            </div>
+            <div class="word">
+                <div>
+                    <p>◆ *为必填内容</p>
+                    <p>◆ 请填写真实信息</p>
+                    <p>◆ 手机号用于接收您兑换的卡券</p>
+                    <p>◆ 实物将由工作人员寄往您登记的地址</p>
+                    <p>◆ 官方客服QQ：2430732028</p>
+                </div>
+            </div>
+            <div class="btn">
+                <div id="save">保存</div>
+                <div style="margin-top: 15px;background: #58c3f1;" id="zhuxiao">注销</div>
+            </div>
+        </div>
+        <div class="lottery-list">
+            <div class="l-title">中奖列表</div>
+            <div class="list-box">
+                <div v-for="(index, item) in winlist" class="list">
+                    <div class="name">\{{item.prizeName}}</div>
+                    <div class="time">\{{item.time.substring(5,16)}}</div>
+                    <div v-if="item.isSend == 0" winningid="\{{item.id}}" prizeType="\{{item.prizeType}}"
+                         class="lbtn isactive"><span>未领</span></div>
+                    <div v-if="(item.isSend == 1)" winningid="\{{item.id}}" prizeType="\{{item.prizeType}}"
+                         class="lbtn">
+                        <span>已领</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="ningmeng">
+            <div class="box">
+                <div class="e">
+                    <img id="showaddsenior" style="width:100%;" src="{{@static_url}}/images/usercenter/fulicard.19d80fe4.png"
+                         alt="">
+                    <div style="position: relative;"><span class="jd">福利券礼包&nbsp;&nbsp;[×5]</span><span
+                            style="background: #4dcdb9; border: 1px solid #4dcdb9;" id="duihuanFli"
+                            class="btn1">100柠檬点兑换</span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="e">
+                    <img style="width:100%;" src="{{@static_url}}/images/usercenter/jdEcard.8fd89a78.png" alt="">
+                    <div style="position: relative;"><span class="jd">京东E卡10元卡</span><span id="duihuanE" class="btn1">1200柠檬点兑换</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="e">
+                    <img style="width:100%;" src="{{@static_url}}/images/usercenter/Qcard.adc08242.jpg" alt="">
+                    <div style="position: relative;"><span class="jd">10Q币</span><span
+                            style="background: #f8aa0d; border: 1px solid #f8aa0d;" id="duihuanQ"
+                            class="btn1">1200柠檬点兑换</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="sendlottery">
+            <div id="gainingmask" style="display: block;" class="gainingmask">
+                <div class="gbox">
+                    <div class="g-word">
+                        <div class="selectbox">
+                            <p style="font-size: 15px;">请选择您的区服以及角色</p>
+                            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                                <div class="weui-cell__hd">
+                                    <label for="" class="weui-label">游戏区服</label>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <select id="select-server" class="weui-select" name="select1">
+                                        <option value="-1">请选择大区</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="weui-cell weui-cell_select weui-cell_select-after">
+                                <div class="weui-cell__hd">
+                                    <label for="" class="weui-label">游戏角色</label>
+                                </div>
+                                <div class="weui-cell__bd">
+                                    <select id="select-role" class="weui-select" name="select2">
+                                        <option value="0">请选择角色</option>
+                                        <option roleid="\{{item.roleId}}" value="\{{item.registSource}}"
+                                                v-for="item of role">\{{item.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gbtn">确定</div>
+                    <div class="gbtn1">取消</div>
+                </div>
+            </div>
+        </div>
+        <div class="sendlottery1">
+            <div id="gainingmask" style="display: block;" class="gainingmask">
+                <div class="gbox">
+                    <div style="text-align: left;padding: 10% 10%; font-size: 14px;" class="g-word">
+                        <div style="font-size: 13px" class="selectbox">
+                            <p style="font-size: 15px;text-align: center">手动发放奖品</p>
+                            <div style="margin-top: 20px;">温馨提示：</div>
+                            <div>手动发放的奖品，请前往个人中心登记个人邮寄信息。</div>
+                            <div>如有其他问题请联系官方客服(邮寄信息不完整、三天内任没有填写正确邮寄信息都视为放弃奖品)。</div>
+                        </div>
+                    </div>
+                    <div style="bottom: 7%;" class="gbtn">确定</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: none;" class="sendlottery3">
+            <div id="gainingmask2" style="display: block;" class="gainingmask">
+                <div class="gbox">
+                    <div style="text-align: left;padding: 10% 10%; font-size: 14px;" class="g-word">
+                        <div class="selectbox">
+                            <br>
+                            <div>温馨提示：</div>
+                            <div>卡号卡密将已短信形式发往您登记的手机号码.</div>
+                        </div>
+                    </div>
+                    <div class="gbtn">确定</div>
+                    <div class="gbtn1">取消</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="js_dialog" id="iosDialog2" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__bd"></div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" id="iosDialoghide" class="weui-dialog__btn weui-dialog__btn_primary">朕已阅</a>
+        </div>
+    </div>
+</div>
+
+<!--分享的蒙版-->
+<div class="sharemask">
+    <div>
+        <img class="shou" src="{{@static_url}}/images/usercenter/mogushou.b2b437e5.png" alt="">
+        <img class="tou" src="{{@static_url}}/images/usercenter/mogutou.3e2a1394.png" alt="">
+        <div style="position: absolute; bottom: 0;left: 28px;">分享给朋友</div>
+    </div>
+    <img class="shareclose" src="{{@static_url}}/images/usercenter/shareclose.0ff0cdc2.png" alt="">
+</div>
+
+{{> addSenior}}

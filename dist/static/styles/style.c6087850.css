@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.photo {
+  background-image: url("../images/user.0a19c16a.png");
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+}
+.home {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+.home .nav {
+  color: #333;
+}
+.home .cd-pay.query .nav {
+  width: 30px;
+}

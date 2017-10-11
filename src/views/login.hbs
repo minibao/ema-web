@@ -1,0 +1,164 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/swiper/swiper.min.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/login.css'/>
+    <!--<script type="text/javascript" src="{{@static_url}}/lib/qc_loader.js" data-appid="101399880"-->
+            <!--data-redirecturi="https://social.lemonade-game.com" charset="utf-8"></script>-->
+    <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101399880"  data-redirecturi="https://social.lemonade-game.com" charset="utf-8"></script>-->
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/swiper/swiper.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="{{@static_url}}/scripts/login.js"></script>
+{{/section}}
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide slide1"><img src="{{@static_url}}/images/login/bg02.jpg" alt=""></div>
+        <div class="swiper-slide slide2"><img src="{{@static_url}}/images/login/bg01.jpg" alt=""></div>
+    </div>
+    <!-- <div class="swiper-pagination"></div> -->
+</div>
+<!--<div class="logo logopage"><i class="icon sprite-icon_logo"></i></div>-->
+<div class="sw"></div>
+<div class="selectsever">
+    <div @click="relogin()" class="re-login"><img src="{{@static_url}}/images/login/relogin.png" alt=""></div>
+    <div class="selectbox">
+        <p>亲爱的召唤师，请选择您的区服以及角色</p>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏区服</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select id="select-server" class="weui-select" name="select1">
+                    <option value="-1">请选择大区</option>
+                    <option value="23002">天空之城</option>
+                    <option value="23000">天使之门</option>
+                    <option value="23003">绯红暴君</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after" v-if="loginStyle">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏角色</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select id="select-role" class="weui-select" name="select2">
+                    <option value="0">请选择角色</option>
+                    <option  v-if="item"  value="\{{item.registSource}}" v-for="item of role">\{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after" v-if="!loginStyle">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏角色</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="nickName" type="text" placeholder="请输入角色名"/>
+            </div>
+        </div>
+        <div class="weui-cells__tips">\{{tips}}</div>
+    </div>
+    <div class="btn-box"><img @click="transfer()" src="{{@static_url}}/images/login/select-btn.png" alt=""></div>
+</div>
+<div class="weui-cells weui-cells_form logopage">
+    <div class="weui-cell" v-if="loginFlag">
+        <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_account"></i></label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" v-model="account" type="text" placeholder="手机号/邮箱"/>
+        </div>
+    </div>
+    <div class="weui-cell" v-if="loginFlag">
+        <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_psd"></i></label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" v-model="password" type="password" placeholder="请输入密码"/>
+        </div>
+    </div>
+
+
+    <div class="weui-cell" v-if="!loginFlag">
+        <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_account"></i></label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" v-model="mobile" type="text" placeholder="手机号"/>
+        </div>
+    </div>
+    <div class="weui-cell weui-cell_vcode" v-if="!loginFlag">
+        <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_psd"></i></label></div>
+        <div class="weui-cell__bd">
+            <input class="weui-input" v-model="captcha" type="number" pattern="[0-9]*" placeholder="请输入验证码">
+        </div>
+        <div class="weui-cell__ft">
+            <a @click="getCaptcha()" id="captchaBtn" class="weui-vcode-btn">\{{captchaInfo}}</a>
+        </div>
+    </div>
+</div>
+
+<div class="login-change"><a @click="changeCaptchaLogin()">切换登录方式</a></div>
+
+<div class="weui-btn-area login logopage">
+    <a href="javascript:" id="showTooltips" @click="login"><i class="icon sprite-icon_login"></i></a>
+    <!--<a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips" @click="login">登录</a>-->
+</div>
+
+<!--<div class="zhmm"><a><i class="icon sprite-icon_t_zhmm"></i></a></div>-->
+<div class="login-footer logopage">
+    <div class="left" id="wechatLoginBtn">
+        <!--<a  href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx119789934e573d9f&redirect_uri=https%3A%2F%2Fsocial.lemonade-game.com/users&response_type=code&scope=snsapi_login&state=#wechat_redirect">-->
+            <!--<i class="icon sprite-icon_wx_login"></i>-->
+        <!--</a>-->
+        <i class="icon sprite-icon_wx_login"></i>
+    </div>
+    <a class="right" @click="changeLoginStyle()">
+        <i class="icon sprite-icon_qq_login"></i>
+    </a>
+</div>
+
+<div class="js_dialog" id="iosDialog2" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog">
+        <div class="weui-dialog__bd">请先选择大区</div>
+        <div class="weui-dialog__ft">
+            <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">知道了</a>
+        </div>
+    </div>
+</div>
+
+<div id="msgCode" class="check-code-box">
+    <div class="check-code">
+        <div class="tips">
+            <p>已查询到角色信息，为了保障角色信息不被泄漏，已往该角色发送验证码。</p>
+            <p>请启动游戏，查收邮箱中的验证码。</p>
+        </div>
+        <div class="check-code-input">
+            <input class="weui-input" v-model="msgCode" type="number" placeholder="请输入验证码">
+        </div>
+        <div class="check-code-btn">
+            <a @click="sendCaptcha()">验证</a>
+        </div>
+        <a @click="boxCancel()" class="check-box-cancel"><i class="icon sprite-x"></i></a>
+    </div>
+</div>
+
+<!--选择游戏-->
+<div id="sendlottery" class="sendlottery bounceInUp">
+    <div id="gainingmask" style="display: block;" class="gainingmask">
+        <div class="gbox">
+            <div class="g-word">
+                <div class="selectbox">
+                    <p style="font-size: 15px;">游戏选择</p>
+                    <div style="margin-top: 30px;" class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__bd">
+                            <select style="" id="select-server-role" class="weui-select" name="select1">
+                                <option value="-1">请选择游戏</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gbtn">确定</div>
+            <div class="gbtn1">取消</div>
+        </div>
+    </div>
+</div>
+
+

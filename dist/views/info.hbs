@@ -1,0 +1,291 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/info.0b9d2a71.css'/>
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/lib/echarts.min.js"></script>
+    <script src="{{@static_url}}/scripts/info.c5f6862c.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <!--<script src="{{@static_url}}/scripts/wechatShare.da6bbde2.js"></script>-->
+{{/section}}
+
+<div class="info">
+    <img id="info-top-back" src="{{@static_url}}/images/imgs-zhanji/top_back.a01df3b9.png" alt="">
+    <img id="sharebtn" style="width: 20px;position: absolute;top:20px;right: 20px;"
+         src="{{@static_url}}/images/imgs-zhanji/sharebtn.9f26056c.png" alt="">
+    <img id="select-server" src="{{@static_url}}/images/imgs-zhanji/select-server.049d57c7.png" alt="">
+    <div style="display: none" class="select-server">
+        <span class="server-word">
+            <select id="sever-select" class="weui-select" name="select1">
+                <option selected="" value="23000">天使之门</option>
+                <option value="23002">天空之城</option>
+                <option value="23003">绯红暴君</option>
+            </select>
+            <img id="open" src="{{@static_url}}/images/imgs-zhanji/open.4114531e.png" alt="">
+        </span>
+        <span></span>
+        <img src="{{@static_url}}/images/imgs-zhanji/select_server_bar.1c2652cf.png" alt="">
+    </div>
+    <div class="head">
+        <div><img src="{{@static_url}}/images/imgs-zhanji/head_box.43f23108.png" alt="">
+            <img src="{{@static_url}}/imgs_static/heroes/\{{userheros[0].hero_img}}" alt=""></div>
+        <div style="display: none;" class="dianzan"><span class="dianzan-word">69</span>
+            <img src="{{@static_url}}/images/imgs-zhanji/min_head.fd6baa21.png" alt=""></div>
+        <div class="name">\{{userInfo.name}}</div>
+    </div>
+</div>
+
+<div id="wxshare" class="match">
+    <ul class="base-info" v-if="!showAll">
+        <!--<div class="zhanjibar"><img src="{{@static_url}}/images/imgs-zhanji/zhanjishow_bar.11449157.png" alt=""></div>-->
+        <div class="infobar">
+            <div class="bars bars-active">
+                <p>基本数据</p>
+                <!--<img class="box-shadow" src="{{@static_url}}/images/usercenter/bar1.ec5c26d0.png" alt="">-->
+            </div>
+            <div class="bars">
+                <p>雷达图</p>
+                <!--<img src="{{@static_url}}/images/usercenter/bar1.ec5c26d0.png" alt="">-->
+            </div>
+        </div>
+        <div id="basic-info" class="box">
+            <!--<div class="w30">-->
+            <!--<div class="back">-->
+            <!--<img src="{{@static_url}}/images/imgs-zhanji/zhanji_jibie.a7eddb5c.png" alt="">-->
+            <!--<div class="duanwei">暂无</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div style="width: 100%;height:100%;" id="three-combat"></div>&ndash;&gt;-->
+            <!--</div>-->
+            <div class="w70">
+                <div class="b-up">
+                    <div class="shenglv">
+                        <!--<span class="sp-left">胜率</span><span class="sp-right">\{{userInfo.rateOfWin}}</span>-->
+                        <div style="float: left;width: 100%;">
+                            <div style="font-weight: 600;font-size: 14px;color: #ff610f;line-height: 20px;height: 20px;text-align: center;">
+                                胜率
+                            </div>
+                            <div id="indicatorContainer_win1" style="margin: 0px auto;width: 72px;text-align: center;">
+                                <canvas id="ctx-win" width="720" height="720"
+                                        style="width: 72px; height: 72px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zongjushu">
+                        <!--<span class="sp-left">总局数</span><span class="sp-right">\{{userInfo.battileWinNum + userInfo.battileFailNum}}</span>-->
+                        <div style="float: left;width: 100%;">
+                            <div style="font-weight: 600;font-size: 14px;color: #ff610f;line-height: 20px;height: 20px;text-align: center;">
+                                场次
+                            </div>
+                            <div id="indicatorContainer_win1" style="margin: 0px auto;width: 72px;text-align: center;">
+                                <canvas id="ctx-win1" width="720" height="720"
+                                        style="width: 72px; height: 72px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zongjushu">
+                        <!--<span class="sp-left">总局数</span><span class="sp-right">\{{userInfo.battileWinNum + userInfo.battileFailNum}}</span>-->
+                        <div style="float: left;width: 100%;">
+                            <div style="font-weight: 600;font-size: 14px;color: #ff610f;line-height: 20px;height: 20px;text-align: center;">
+                                综合得分
+                            </div>
+                            <div id="indicatorContainer_win1" style="margin: 0px auto;width: 72px;text-align: center;">
+                                <canvas id="ctx-win2" width="720" height="720"
+                                        style="width: 72px; height: 72px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="b-down">-->
+                <!--<div class="">金币54/分</div>-->
+                <!--<div class="">输出54/分</div>-->
+                <!--<div class="">kda3.4</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div id="radar" class="box box1">
+            <div style="" id="three-combat"></div>
+        </div>
+    </ul>
+    <div class="marqueeS slideInRight">数据同步存在一定延迟</div>
+    <div class="h-title">
+        <div class="zhanjibar">
+            <div class="left">
+                <div id="show-myheros" class="changyong">常用英雄</div>
+                <img id="11" src="{{@static_url}}/images/imgs-zhanji/11.da657d7a.png" alt="">
+                <img id="12" style="display: none" src="{{@static_url}}/images/imgs-zhanji/12.d5c6d18b.png" alt="">
+            </div>
+            <div class="center">
+                <div id="show-myrecord" class="changyong">战绩</div>
+                <img id="21" style="display: none" src="{{@static_url}}/images/imgs-zhanji/21.602ffc3e.png" alt="">
+                <img id="22" src="{{@static_url}}/images/imgs-zhanji/22.46f88bf5.png" alt="">
+            </div>
+            <div class="right">
+                <div id="show-paihang" class="changyong">排行榜</div>
+                <img id="31" style="display: none" src="{{@static_url}}/images/imgs-zhanji/31.bd50d330.png" alt="">
+                <img id="32" src="{{@static_url}}/images/imgs-zhanji/32.a1d72cd7.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="detail">
+        <div class="weui_cells weui_cells_access" style="min-height: 500px" v-if="!showAll">
+            <div class="no_match">近期没有参加比赛</div>
+            <div class="detail-list">
+
+                <div class="my-heros">
+                    <div class="top-title">
+                        <div>
+                            <div class="four-t title-hero-01">英雄</div>
+                            <div class="four-t title-times-02">场次</div>
+                            <div class="four-t title-win-03">胜率</div>
+                            <div class="four-t title-kda-04">KDA</div>
+                        </div>
+                    </div>
+                    <div class="my-heros-list-box" v-for="item of userheros">
+                        <div class="my-heros-list">
+                            <div class="heros-head">
+                                <img src="{{@static_url}}/imgs_static/heroes/\{{item.hero_img}}" alt="">
+                            </div>
+                            <div class="time-win">
+                                <div class="up">
+                                    <div class="times">\{{item.allNum}}</div>
+                                    <div class="win">\{{item.rateOfWin}}</div>
+                                </div>
+                                <div class="bar">
+                                    <div style="width: \{{item.rateOfWin}}" class="progress-bar"></div>
+                                </div>
+                            </div>
+                            <div class="kda">
+                                <div class="up">\{{item.kda}}</div>
+                                <div class="down">
+                                    <!--\{{item.killCount +"/"+ item.beKillCount +"/"+ item.assistCount}}--></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: none;" class="my-record">
+                    <div class="my-record-list-box">
+                        <a href="info_details?gameGuid=\{{battleitem.gameGuid}}&time=\{{battleitem.time}}&allTime=\{{battleitem.allTime}}&mapId=\{{battleitem.mapId}}"
+                           v-for="battleitem of battle">
+                            <div class="my-record-list">
+                                <div class="heros-head"><img
+                                        src="{{@static_url}}/imgs_static/heroes/\{{battleitem.hero_img}}" alt=""></div>
+                                <div class="cont">
+                                    <div class="up">
+                                        <p v-if="battleitem._result=='胜利'"
+                                           style="color:#1dc2aa"> \{{battleitem._result}}</p>
+                                        <p v-if="battleitem._result=='失败'"
+                                           style="color:#ff6666"> \{{battleitem._result}}</p>
+                                        <p>\{{battleitem.killCount +"/"+ battleitem.beKilledCount +"/"+
+                                            battleitem.assistCount}}</p>
+                                    </div>
+                                    <div class="down">
+                                        <div>\{{battleitem._mapId}}</div>
+                                        <div>\{{battleitem.date}}</div>
+                                    </div>
+                                    <div class="href-icon">
+                                        <img src="{{@static_url}}/images/imgs-zhanji/hreficon.e9d0b5b1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <a v-if="!isEnd" href="javascript:;" @click="getUserDataBattle()" class="load-more mr-t">点击加载更多</a>
+                    <div v-if="isEnd" class="load-more mr-t">没有更多了</div>
+                </div>
+
+                <div style="display: none;" class="paihang">
+                    <div style="background:#fff; text-align: center;font-size: 15px;width: 100%;color:#888888">
+                        <span>\{{myrank}}</span>
+                        <br>
+                        <span>&nbsp;&nbsp;&nbsp;(排行榜每周清空并发放相关福利)</span>
+                    </div>
+                    <div>
+                        <div class="title-pai">
+                            <span style="width: 15%;font-weight:500;">名次</span>
+                            <span style="width: 40%">角色名</span>
+                            <span style="width: 30%">区服</span>
+                            <span style="width: 15%">得分</span>
+                        </div>
+                        <div @click="showbangData(item.server,item.roleId)" server="\{{item.server}}"
+                             role="\{{item.roleId}}" style="margin-top: 5px;" class="no showbangdata"
+                             v-for="(index, item) in rank">
+                            <span v-if="index == 0" style="width: 15%">
+                                <img src="{{@static_url}}/images/imgs-zhanji/1.59af1faf.png" alt="">
+                            </span>
+                            <span v-if="index == 1" style="width: 15%">
+                                <img src="{{@static_url}}/images/imgs-zhanji/2.498ec046.png" alt="">
+                            </span>
+                            <span v-if="index == 2" style="width: 15%">
+                                <img src="{{@static_url}}/images/imgs-zhanji/3.0a8ff6d3.png" alt="">
+                            </span>
+
+                            <span v-if="index > 2" style="width: 15%">\{{index+1}} </span>
+                            <span style="width: 40%">\{{item.name}}</span>
+                            <span style="width: 30%">\{{item.servername}}</span>
+                            <span style="width: 15%">\{{item.avgAll.toFixed(1)}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" id="go-to-fuli" class="shakecat">
+    <!--<img id="go-to-fuli" src="{{@static_url}}/images/imgs-zhanji/cat.a561a24e.png" alt="">-->
+    <div class="catbox">
+        <img class="rotate" src="{{@static_url}}/images/imgs-zhanji/rotateguang.a4e28c33.png" alt="">
+        <img class="rubberBand" src="{{@static_url}}/images/imgs-zhanji/box.1a5199d0.png" alt="">
+        <img class="flash" src="{{@static_url}}/images/imgs-zhanji/star.d3988606.png" alt="">
+    </div>
+</div>
+
+<!--分享的蒙版-->
+<div class="sharemask">
+    <div>
+        <img class="shou" src="{{@static_url}}/images/usercenter/mogushou.b2b437e5.png" alt="">
+        <img class="tou" src="{{@static_url}}/images/usercenter/mogutou.3e2a1394.png" alt="">
+        <div style="position: absolute; bottom: 0;left: 28px;">分享给朋友</div>
+    </div>
+    <img class="shareclose" src="{{@static_url}}/images/usercenter/shareclose.0ff0cdc2.png" alt="">
+</div>
+
+<!--选择区服-->
+<div  class="sendlottery bounceInUp">
+    <div id="gainingmask" style="display: block;" class="gainingmask">
+        <div class="gbox">
+            <div class="g-word">
+                <div class="selectbox">
+                    <p style="font-size: 15px;">请选择您的区服以及角色</p>
+                    <div style="margin-top: 30px;" class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div  class="weui-cell__hd">
+                            <label for="" class="weui-label">游戏区服</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select style="" id="select-server-role" class="weui-select" name="select1">
+                                <option value="-1">请选择大区</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_select weui-cell_select-after">
+                        <div class="weui-cell__hd">
+                            <label for="" class="weui-label">游戏角色</label>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <select id="select-role" class="weui-select" name="select2">
+                                <option value="0">请选择角色</option>
+                                <option roleid="\{{item.roleId}}" value="\{{item.registSource}}"
+                                        v-for="item of inforole">\{{item.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gbtn">确定</div>
+            <div class="gbtn1">取消</div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,247 @@
+.weui-tabbar{
+  display: none;
+}
+.goback{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  z-index: 100;
+  left: 20px;
+  top: 20px;
+  opacity: 0.5;
+  img{
+    width:100%;
+  }
+}
+.detail {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 500px;
+  background: #fff;
+  .toptitle {
+    width: 100%;
+    padding: 8px 8px;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #12529b;
+    font-size: 14px;
+    .w30 {
+      float: left;
+      width: 35%;
+      height: 100%;
+    }
+    .w70 {
+      .dividing-line {
+        border-left: 2px solid #e7e7e7;
+        padding: 0px 5px;
+        height: 100%;
+      }
+      .fl {
+        text-align: left;
+        margin-left: 10%;
+      }
+      .fr {
+        float: right;
+      }
+
+      float: left;
+      width: 65%;
+      height: 100%;
+    }
+  }
+  .myteam {
+    width: 100%;
+    position: relative;
+    padding-bottom: 20px;
+    display: none;
+    .myteambar {
+      height: 35px;
+      line-height: 35px;
+      position: relative;
+      background: #e7e7e7;
+      > img {
+        position: absolute;
+        height: 100%;
+      }
+      .w30 {
+        height: 100%;
+        width: 30%;
+        float: left;
+        position: relative;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+      }
+      .w70 {
+        padding: 0 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        height: 100%;
+        width: 70%;
+        text-align: right;
+        color: #ff6666;
+        font-size: 14px;
+        img {
+          width: 16px;
+          position: relative;
+          top: 2px;
+        }
+        :nth-child(2) {
+          margin-right: 5px;
+        }
+        :nth-child(3) {
+          color: #ff6666;
+        }
+
+      }
+    }
+    .cont {
+      position: relative;
+      width: 100%;
+      top: 10px;
+      .my-heros-list {
+        height: 80px;
+        width: 100%;
+        color: #000;
+        padding: 5px 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        > div {
+          float: left;
+        }
+        .heros-head {
+          width: 14%;
+          height: 100%;
+          position: relative;
+          top: 10%;
+          img {
+            position: absolute;
+            width: 100%;
+          }
+        }
+        .time-win {
+          width: 50%;
+          position: relative;
+          height: 100%;
+          font-size: 16px;
+          .up {
+            width: 100%;
+            height: 50%;
+            padding: 0 15%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            .name {
+              height: 100%;
+              float: left;
+              text-align: left;
+              line-height: 50px;
+            }
+            .win {
+              width: 50%;
+              height: 100%;
+              float: left;
+              text-align: right;
+              line-height: 50px;
+            }
+          }
+          .zhuangbeis {
+            width: 100%;
+            height: 50%;
+            position: relative;
+            padding: 3px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            .zhuanbei {
+              width: 16%;
+              padding: 2px;
+              -webkit-box-sizing: border-box;
+              -moz-box-sizing: border-box;
+              box-sizing: border-box;
+              height: 100%;
+              position: relative;
+              float: left;
+              .bg {
+                width: 100%;
+                //background: #b5b5b5;
+                overflow: hidden;
+                img {
+                  width: 100%;
+                  float: left;
+                }
+              }
+            }
+          }
+        }
+        .kda {
+          min-width: 32%;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          padding: 20px 10px;
+          .up {
+            width: 100%;
+            height: 50%;
+            text-align: center;
+            line-height: 50px;
+          }
+          .down {
+            width: 100%;
+            height: 50%;
+            text-align: center;
+            font-size: 14px;
+            color: #858585;
+          }
+          span {
+            img {
+              width: 14px;
+            }
+            color: #aaaaaa;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+  .detail .toptitle .w70 {
+    width: 60%;
+  }
+
+  .detail .toptitle .w30 {
+    width: 40%;
+  }
+  .detail .myteam .cont .my-heros-list .time-win {
+    font-size: 14px;
+  }
+  .detail .myteam .cont .my-heros-list .time-win .up {
+    padding: 0 10%;
+  }
+  .detail .myteam .cont .my-heros-list .time-win .zhuangbeis {
+
+    padding: 2px;
+
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .detail .myteam .cont .my-heros-list .heros-head img {
+    width: 60%;
+  }
+  .detail .myteam .cont .my-heros-list .time-win .zhuangbeis .zhuanbei .bg {
+    width: 70%;
+  }
+
+  .detail .myteam .myteambar .w30 {
+    text-align: left;
+    left: 20px;
+  }
+}

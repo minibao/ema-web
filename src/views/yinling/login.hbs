@@ -1,0 +1,61 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/yinling/login.css'/>
+{{/section}}
+
+{{#section "foot"}}
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="{{@static_url}}/scripts/yinling/login.js"></script>
+{{/section}}
+
+<div class="frm">
+
+    <!--帐号密码-->
+    <div class="weui-cells weui-cells_form logopage">
+
+        <div class="weui-cell" v-if="loginFlag">
+            <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_account"></i></label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="account" type="text" placeholder="手机号/邮箱"/>
+            </div>
+        </div>
+        <div class="weui-cell" v-if="loginFlag">
+            <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_psd"></i></label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="password" type="password" placeholder="请输入密码"/>
+            </div>
+        </div>
+
+        <div class="weui-cell" v-if="!loginFlag">
+            <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_account"></i></label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="mobile" type="text" placeholder="手机号"/>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_vcode" v-if="!loginFlag">
+            <div class="weui-cell__hd"><label class="weui-label"><i class="icon sprite-icon_psd"></i></label></div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="captcha" type="number" pattern="[0-9]*" placeholder="请输入验证码">
+            </div>
+            <div class="weui-cell__ft">
+                <a @click="getCaptcha()" id="captchaBtn" class="weui-vcode-btn">\{{captchaInfo}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-change"><a @click="changeCaptchaLogin()">切换登录方式</a></div>
+
+    <!--登录按钮-->
+    <div class="weui-btn-area login logopage">
+        <a href="javascript:" id="showTooltips" @click="login"><i class="icon sprite-icon_login"></i></a>
+    </div>
+    <!--微信和角色名登录-->
+    <div class="login-footer logopage">
+        <div class="left" id="wechatLoginBtn">
+            <i class="icon sprite-icon_wx_login"></i>
+        </div>
+        <a class="right" @click="changeLoginStyle()">
+            <i class="icon sprite-icon_qq_login"></i>
+        </a>
+    </div>
+
+</div>

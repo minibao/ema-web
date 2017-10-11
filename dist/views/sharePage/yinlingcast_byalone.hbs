@@ -1,0 +1,92 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+<script src="{{@static_url}}/lib/vue.min.js"></script>
+<script src="{{@static_url}}/scripts/common.21daf244.js"></script>
+<script src="{{@static_url}}/lib/layer/layer.js"></script>
+<script src="{{@static_url}}/scripts/sharePage/yinglingcast_byalone.78c99f08.js"></script>
+<style>
+    html, body {
+        margin: 0;
+        max-width: 600px;
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        max-height: 1000px;
+        background: #0D0D0D;
+    }
+
+    .frm {
+        width: 100%;
+        height: 100%;
+        background: url(../../static/images/yinling/bg-guanyu.ba4d542f.jpg) no-repeat;
+        background-size: 100%;
+        overflow: auto;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .btnbox {
+        position: absolute;
+        width: 70%;
+        left: 15%;
+        top: 50%;
+        text-align: center;
+
+    }
+
+    .btns {
+        position: relative;
+        top: 10px;
+        /*overflow: hidden;*/
+        text-align: center;
+        /*height:30px;*/
+    }
+
+    .btnbox img {
+        width: 100%;
+    }
+
+    #in {
+        width: 70%;
+        font-size: 16px;
+        height: 25px;
+        border-radius: 10px;
+        background: rgba(255, 255, 242, 0.6);
+        text-align: center;
+        border: solid 0px red;
+        color: #555;
+    }
+
+    .btn {
+        height: 25px;
+        line-height: 25px;
+        padding: 0 15px;
+        background: #d74231;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: 900;
+        display: inline-block;
+    }
+    .disable{
+        background: #7d7d7d;
+    }
+
+
+</style>
+<div id="app" class="frm">
+    <div class="box">
+        <div class="btnbox">
+            <img class="wordimg" src="{{@static_url}}/images/yinling/word.908db34e.png" alt="">
+            <div class="btns">
+                <input  id="in" type="text">
+                <span class="btn">领取</span>
+            </div>
+        </div>
+        <p></p>
+    </div>
+</div>
+

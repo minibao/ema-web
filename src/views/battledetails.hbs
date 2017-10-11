@@ -1,0 +1,147 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/battledetails.css'/>
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/battledetails.js"></script>
+{{/section}}
+<div onclick="window.history.back(-1);" class="goback"><img src="{{@static_url}}/images/imgs-zhanji/goback.png" alt=""></div>
+<div class="detail">
+    <div class="toptitle">
+        <div class="w30">\{{time}}</div>
+        <div class="w70">
+            <span class="dividing-line"></span>
+            <span class="fl">\{{allTime}}</span><span class="fr">\{{mapId}}</span></div>
+    </div>
+    <div class="myteam">
+        <div class="my"><div class="myteambar">
+            <img v-if="detailInfo.LGDdata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/losebar.png" alt="">
+            <img v-if="detailInfo.LGDdata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/winbar.png" alt="">
+            <div v-if="detailInfo.LGDdata[0].result == 2" class="w30"><span>\{{detailInfo.LGDname}}败</span></div>
+            <div v-if="detailInfo.LGDdata[0].result == 1" class="w30"><span>\{{detailInfo.LGDname}}胜</span></div>
+            <div class="w70">
+                <span>
+                    <img v-if="detailInfo.LGDdata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/hurtred.png" alt="">
+                    <img v-else="detailInfo.LGDdata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/hurtgreen.png" alt="">
+                </span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">\{{detailInfo.LGDhurt}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.LGDhurt}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">KDA</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">KDA</span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">\{{detailInfo.LGDk}}/\{{detailInfo.LGDd}}/\{{detailInfo.LGDa}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.LGDk}}/\{{detailInfo.LGDd}}/\{{detailInfo.LGDa}}</span>
+            </div>
+        </div>
+            <div class="cont"  v-for="(index, item) in detailInfo.LGDdata">
+                <div class="my-heros-list">
+                    <div class="heros-head"><img src="{{@static_url}}/imgs_static/heroes/\{{item.roleJob}}_1_1.png" alt=""></div>
+                    <div class="time-win">
+                        <div class="up">
+                            <div class="name">\{{item.NAME}}</div>
+                        </div>
+                        <div class="zhuangbeis">
+                            <div v-show="item.item1 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item1 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item1}}.png" alt=""></div></div>
+                            <div v-show="item.item2 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item2 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item2}}.png" alt=""></div></div>
+                            <div v-show="item.item3 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item3 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item3}}.png" alt=""></div></div>
+                            <div v-show="item.item4 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item4 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item4}}.png" alt=""></div></div>
+                            <div v-show="item.item5 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item5 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item5}}.png" alt=""></div></div>
+                            <div v-show="item.item6 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item6 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item6}}.png" alt=""></div></div>
+                        </div>
+                    </div>
+                    <div class="kda">
+                        <span><img src="{{@static_url}}/images/imgs-zhanji/hurt.png" alt=""></span>
+                        <span>\{{item.damageTotal}}</span>
+                        <span>KDA</span>
+                        <span>\{{item.killCount}}/\{{item.beKilledCount}}/\{{item.assistCount}}</span>
+                    </div>
+                </div>
+            </div></div>
+
+        <div class="ot"><div style="margin-top: 20px;" class="myteambar">
+            <img v-if="detailInfo.Ehomedata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/losebar.png" alt="">
+            <img v-if="detailInfo.Ehomedata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/winbar.png" alt="">
+            <div v-if="detailInfo.Ehomedata[0].result == 2" class="w30"><span>\{{detailInfo.Ehomename}}败</span></div>
+            <div v-if="detailInfo.Ehomedata[0].result == 1" class="w30"><span>\{{detailInfo.Ehomename}}胜</span></div>
+            <div class="w70">
+                    <span>
+                        <img v-if="detailInfo.Ehomedata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/hurtred.png" alt="">
+                        <img v-if="detailInfo.Ehomedata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/hurtgreen.png" alt="">
+                    </span>
+                <span v-if="detailInfo.Ehomedata[0].result == 2">\{{detailInfo.Ehomehurt}}</span>
+                <span v-if="detailInfo.Ehomedata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.Ehomehurt}}</span>
+                <span v-if="detailInfo.Ehomedata[0].result == 2">KDA</span>
+                <span v-if="detailInfo.Ehomedata[0].result == 1" style="color:#1cc2aa">KDA</span>
+                <span v-if="detailInfo.Ehomedata[0].result== 2">\{{detailInfo.Ehomek}}/\{{detailInfo.Ehomed}}/\{{detailInfo.Ehomea}}</span>
+                <span v-if="detailInfo.Ehomedata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.Ehomek}}/\{{detailInfo.Ehomed}}/\{{detailInfo.Ehomea}}</span>
+            </div>
+        </div>
+            <div class="cont"  v-for="(index, item) in detailInfo.Ehomedata">
+                <div class="my-heros-list">
+                    <div class="heros-head"><img src="{{@static_url}}/imgs_static/heroes/\{{item.roleJob}}_1_1.png" alt=""></div>
+                    <div class="time-win">
+                        <div class="up">
+                            <div class="name">\{{item.NAME}}</div>
+                        </div>
+                        <div class="zhuangbeis">
+                            <div  v-show="item.item1 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item1 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item1}}.png" alt=""></div></div>
+                            <div  v-show="item.item2 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item2 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item2}}.png" alt=""></div></div>
+                            <div  v-show="item.item3 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item3 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item3}}.png" alt=""></div></div>
+                            <div  v-show="item.item4 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item4 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item4}}.png" alt=""></div></div>
+                            <div  v-show="item.item5 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item5 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item5}}.png" alt=""></div></div>
+                            <div  v-show="item.item6 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item6 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item6}}.png" alt=""></div></div>
+                        </div>
+                    </div>
+                    <div class="kda">
+                        <span><img src="{{@static_url}}/images/imgs-zhanji/hurt.png" alt=""></span>
+                        <span>\{{item.damageTotal}}</span>
+                        <span>KDA</span>
+                        <span>\{{item.killCount}}/\{{item.beKilledCount}}/\{{item.assistCount}}</span>
+                    </div>
+                </div>
+            </div></div>
+
+        <div class="my1"><div style="margin-top: 20px;" class="myteambar">
+            <img v-if="detailInfo.LGDdata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/losebar.png" alt="">
+            <img v-if="detailInfo.LGDdata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/winbar.png" alt="">
+            <div v-if="detailInfo.LGDdata[0].result == 2" class="w30"><span>\{{detailInfo.LGDname}}败</span></div>
+            <div v-if="detailInfo.LGDdata[0].result == 1" class="w30"><span>\{{detailInfo.LGDname}}胜</span></div>
+            <div class="w70">
+                <span>
+                    <img v-if="detailInfo.LGDdata[0].result == 2" src="{{@static_url}}/images/imgs-zhanji/hurtred.png" alt="">
+                    <img v-else="detailInfo.LGDdata[0].result == 1" src="{{@static_url}}/images/imgs-zhanji/hurtgreen.png" alt="">
+                </span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">\{{detailInfo.LGDhurt}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.LGDhurt}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">KDA</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">KDA</span>
+                <span v-if="detailInfo.LGDdata[0].result == 2">\{{detailInfo.LGDk}}/\{{detailInfo.LGDd}}/\{{detailInfo.LGDa}}</span>
+                <span v-if="detailInfo.LGDdata[0].result == 1" style="color:#1cc2aa">\{{detailInfo.LGDk}}/\{{detailInfo.LGDd}}/\{{detailInfo.LGDa}}</span>
+            </div>
+        </div>
+            <div class="cont"  v-for="(index, item) in detailInfo.LGDdata">
+                <div class="my-heros-list">
+                    <div class="heros-head"><img src="{{@static_url}}/imgs_static/heroes/\{{item.roleJob}}_1_1.png" alt=""></div>
+                    <div class="time-win">
+                        <div class="up">
+                            <div class="name">\{{item.NAME}}</div>
+                        </div>
+                        <div class="zhuangbeis">
+                            <div v-show="item.item1 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item1 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item1}}.png" alt=""></div></div>
+                            <div v-show="item.item2 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item2 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item2}}.png" alt=""></div></div>
+                            <div v-show="item.item3 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item3 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item3}}.png" alt=""></div></div>
+                            <div v-show="item.item4 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item4 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item4}}.png" alt=""></div></div>
+                            <div v-show="item.item5 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item5 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item5}}.png" alt=""></div></div>
+                            <div v-show="item.item6 != 65535" class="zhuanbei"><div class="bg"><img v-if="item.item6 != 65535" src="{{@static_url}}/imgs_static/items/\{{item.item6}}.png" alt=""></div></div>
+                        </div>
+                    </div>
+                    <div class="kda">
+                        <span><img src="{{@static_url}}/images/imgs-zhanji/hurt.png" alt=""></span>
+                        <span>\{{item.damageTotal}}</span>
+                        <span>KDA</span>
+                        <span>\{{item.killCount}}/\{{item.beKilledCount}}/\{{item.assistCount}}</span>
+                    </div>
+                </div>
+            </div></div>
+
+    </div>
+</div>

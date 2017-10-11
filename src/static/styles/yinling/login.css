@@ -1,0 +1,55 @@
+.page__bd {
+  background: url("../../images/login/bg02.jpg") no-repeat;
+  background-size: 100%;
+}
+.weui-tab__panel {
+  padding-top: 52vh;
+  position: relative;
+  overflow: inherit;
+}
+.weui-cells {
+  margin: 13px 10%;
+  line-height: 1;
+  opacity: 0.8;
+}
+.weui-cells .weui-label {
+  width: 35px;
+}
+.weui-cells .weui-input {
+  font-size: 14px;
+}
+.weui-cells .icon {
+  display: inline-block;
+}
+.weui-cell_vcode {
+  padding-top: 1px;
+  padding-bottom: 2px;
+}
+.login-change {
+  padding-right: 10px;
+  overflow: hidden;
+}
+.login-change a {
+  font-size: 12px;
+  color: blue;
+  display: block;
+  line-height: 30px;
+  width: 80px;
+  float: right;
+}
+.login {
+  text-align: center;
+}
+.login-footer {
+  overflow: hidden;
+  padding: 10px 40px;
+}
+.login-footer .left {
+  float: left;
+}
+.login-footer .right {
+  float: right;
+}
+.login-footer a {
+  color: #00B7FF;
+}

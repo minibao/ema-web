@@ -1,0 +1,115 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/activelottery.e179e20d.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/styleCJ.d4e75a40.css'/>
+    <link rel='stylesheet' href='{{@static_url}}/styles/fanpai.232b4c41.css'/>
+{{/section}}
+{{#section "foot"}}
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="{{@static_url}}/scripts/active/active2fanpai.48d68159.js"></script>
+{{/section}}
+
+<div class="frm">
+    <div class="top">
+        <!--<div class="user-info">-->
+        <!--<div class="left">-->
+        <!--<img class="headimg" src="{{@static_url}}/images/active-imgs/head.b31c2dff.png" alt="">-->
+        <!--<div>-->
+        <!--<span class="user-name">小鸡哔哔哟</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+        <!--<span>\{{binfo.personQuota}}</span>-->
+        <!--<span>柠檬点</span>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="list">
+            <div class="big-prize">大奖记录</div>
+
+            <div id="andyscroll">
+                <div id="scrollmessage">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fuli">
+        <div class="big-prize">福利区</div>
+        <div class="fanpai">
+            <div id="containerfanpai"></div>
+            <!--<div id="topbar"></div>-->
+        </div>
+    </div>
+    <div @click="chouwanxipai" class="center cl-xipai" style="">
+        <div>夺宝</div>
+        <!--<div class="cl-xipai-btn">每次消耗288点/\{{binfo.personQuota}}</div>-->
+        <div class="cl-xipai-btn">每次消耗288柠檬点</div>
+    </div>
+    <div style="display: none;" class="fuliquan">
+        <div class="big-prize">福利券</div>
+        <div class="box">
+            <!--<div class="left">-->
+            <!--<div id="commonTicket" class="quan">普通券</div>-->
+            <!--<div id="commonno" class="no">\{{binfo.lottery1}}张</div>-->
+            <!--</div>-->
+            <div class="right">
+                <div id="seniorTicket" class="quan box-shadow1">精英券</div>
+                <div id="seniorno" class="no">\{{binfo.lottery2}}张</div>
+                <!--<img id="add-senior" class="add" src="{{@static_url}}/images/active-imgs/jingyin-add.0ca58cd7.png" alt="">-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gainingmask3" class="showimgBig">
+    <div class="gbox">
+        <div style="padding: 0%;padding-top: 3%;" class="g-word">
+            <span id="showimgBigName"></span>
+            <span style="padding: 0px;" id="tks">
+                <img style="max-width: 60%;max-height: 60%;margin-top: 0px;" src="">
+            </span>
+        </div>
+        <div style="bottom: 60px;width: 120px;margin-left: -60px;background: -moz-linear-gradient(top, #a128ff, #5816ff); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a128ff), to(#5816ff));" class="gbtn3">再次夺宝</div>
+        <div class="two-btn">
+            <div class="left">
+                <div style="-moz-linear-gradient(top, #f2c551, #e6942c); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f2c551), to(#e6942c));">炫耀一下</div>
+            </div>
+            <div class="right">
+                <div id="gotoprize" style="-moz-linear-gradient(top, #f68f8b, #ee4e4c); background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f68f8b), to(#ee4e4c));">前去领奖</div>
+            </div>
+        </div>
+        <!--<div style="bottom: 15px;width: 120px;margin-left: -60px;" id="gotoprize" class="gbtn1">前去领奖</div>-->
+    </div>
+</div>
+
+<div id="gainingmask1" class="showimgBig">
+    <div class="gbox">
+        <div style="padding: 8% 5% 15% 5%;" class="g-word">
+            <span style="padding:0px" id="showimgBigName1"></span>
+            <span style="padding:0px" id="tks"><img style="max-width: 60%;max-height: 60%;" src=""></span>
+        </div>
+        <div style="bottom: 60px;width: 120px;margin-left: -60px;" class="gbtn3 gbtn3New">再次夺宝</div>
+        <div style="bottom: 15px;width: 120px;margin-left: -60px;" class="gbtn4">炫耀一下</div>
+    </div>
+</div>
+
+<!--<div style="position: fixed;top: 60%;width: 50px;z-index: 99;right: 0;text-align: center;" class="xipai">-->
+<!--<img   style="width: 100%;opacity: 0.6;" src="{{@static_url}}/images/fanpai/xipai.139c98a6.png" alt="">-->
+<!--<p style="color: #fff799;">洗牌</p>-->
+<!--</div>-->
+
+<!--分享的蒙版-->
+<div class="sharemask">
+    <div>
+        <img class="shou" src="{{@static_url}}/images/usercenter/mogushou.b2b437e5.png" alt="">
+        <img class="tou" src="{{@static_url}}/images/usercenter/mogutou.3e2a1394.png" alt="">
+        <div style="position: absolute; bottom: 0;left: 28px;">分享给朋友</div>
+    </div>
+    <img class="shareclose" src="{{@static_url}}/images/usercenter/shareclose.0ff0cdc2.png" alt="">
+</div>
+{{> addSenior}}
+
+<script src="{{@static_url}}/scripts/deck.e3dc88c1.js"></script>
+<script src="{{@static_url}}/scripts/fanpai.33c61487.js"></script>
+

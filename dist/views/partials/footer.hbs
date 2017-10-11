@@ -1,0 +1,77 @@
+<div class="weui-tabbar">
+    <a href="/users/info" v-bind:class="{ 'weui-bar__item_on': 1 == {{tabFlag}} }"
+       class="weui-tabbar__item">
+        <span style="display: inline-block;position: relative;">
+            {{#eq tabFlag 1}}
+                <i class="icon sprite-zhanji"> </i>
+            {{else}}
+                <i class="icon sprite-zhanji_grey"> </i>
+            {{/eq}}
+        </span>
+        <p class="weui-tabbar__label">战绩</p>
+    </a>
+
+    <!--<div v-bind:class="{ 'weui-bar__item_on': 2 == {{tabFlag}} }" class="weui-tabbar__item fulibtn">-->
+    <!--<div class="fulibox">-->
+    <!--<div class="lists">-->
+    <!--<a href="/active/active">-->
+    <!--<div class="list activebtn"><span><img src="{{@static_url}}/images/active-imgs/active.6d6f13d2.png" alt=""></span><span>福利1</span></div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="line"></div>-->
+    <!--<div class="lists">-->
+    <!--<a href="/active/active2">-->
+    <!--<div class="list active2btn"><span><img src="{{@static_url}}/images/active-imgs/active2.428ebba3.png" alt=""></span><span>福利2</span>-->
+    <!--</div>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div class="line"></div>-->
+    <!--</div>-->
+    <!--<span style="display: inline-block;position: relative;">-->
+        <!--{{#eq tabFlag 2}}-->
+    <!--<i class="icon sprite-fuli"> </i>-->
+        <!--{{else}}-->
+    <!--<i class="icon sprite-fuli_grey"> </i>-->
+        <!--{{/eq}}-->
+    <!--&lt;!&ndash;<span class="weui-badge badge-back">8</span>&ndash;&gt;-->
+    <!--</span>-->
+    <!--<p class="weui-tabbar__label">福利</p>-->
+    <!--</div>-->
+
+    <a href="/active/active" v-bind:class="{ 'weui-bar__item_on': 2 == {{tabFlag}} }" class="weui-tabbar__item">
+        <span style="display: inline-block;position: relative;">
+            {{#eq tabFlag 2}}
+                <i class="icon sprite-fuli"></i>
+            {{else}}
+                <i class="icon sprite-fuli_grey"> </i>
+            {{/eq}}
+            <!--<span class="weui-badge badge-back">3</span>-->
+        </span>
+        <p class="weui-tabbar__label">福利</p>
+    </a>
+
+    <!--<a href="/users/pay/wxpay" v-bind:class="{ 'weui-bar__item_on': 3 == {{tabFlag}} }" class="weui-tabbar__item">-->
+    <a href="/topic" v-bind:class="{ 'weui-bar__item_on': 3 == {{tabFlag}} }" class="weui-tabbar__item">
+        <span style="display: inline-block;position: relative;">
+            {{#eq tabFlag 3}}
+                <i class="icon sprite-shequ"></i>
+            {{else}}
+                <i class="icon sprite-shequ_grey"> </i>
+            {{/eq}}
+            <!--<span class="weui-badge badge-back">3</span>-->
+        </span>
+        <p class="weui-tabbar__label">夺宝</p>
+    </a>
+    <a href="/usercenter" v-bind:class="{ 'weui-bar__item_on': 4 == {{tabFlag}} }" class="weui-tabbar__item">
+        <!--<a href="javascript:layer.msg('暂未开放');" v-bind:class="{ 'weui-bar__item_on': 4 == {{tabFlag}} }" class="weui-tabbar__item">-->
+        <span style="display: inline-block;position: relative;">
+            {{#eq tabFlag 4}}
+                <i class="icon sprite-wode"> </i>
+            {{else}}
+                <i class="icon sprite-wode_grey"></i>
+            {{/eq}}
+            <!--<span class="weui-badge badge-back">{{@user.count_unsend}}</span>-->
+        </span>
+        <p class="weui-tabbar__label">我</p>
+    </a>
+</div>

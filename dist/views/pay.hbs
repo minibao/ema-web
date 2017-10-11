@@ -1,0 +1,35 @@
+{{#section "foot"}}
+
+    <script src="{{@static_url}}/lib/layer/layer.js"></script>
+    <script src="{{@static_url}}/lib/common.js"></script>
+    <script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+    <script src="{{@static_url}}/scripts/pay.4520f791.js"></script>
+
+{{/section}}
+<style>
+    .btn {
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+<div class="btn">
+    <button id='buy'>购买社区精英券</button>
+</div>
+
+<form id='alipaysubmit' name='alipaysubmit' target="_self" action='https://openapi.alipay.com/gateway.do' method="post">
+    <!--<input type="" name='app_id' value='2016070901596612'/>-->
+    <!--<input type="" name='biz_content' value='\{{biz_content}}'/>-->
+    <!--<input type="" name='charset' value='utf-8'/>-->
+    <!--<input type="" name='format' value='JSON'/>-->
+    <!--<input type="" name='method' value='alipay.trade.wap.pay'/>-->
+    <!--<input type="" name='notify_url' value='https://api.xx.com/receive_notify.htm'/>-->
+    <!--<input type="" name='return_url' value='https://m.alipay.com/Gk8NF23'/>-->
+    <!--<input type="" name='sign' value='\{{sign}}'/>-->
+    <!--<input type="" name='sign_type' value='RSA'/>-->
+    <!--<input type="" name='timestamp' value='\{{timestamp}}'/>-->
+    <!--<input type="" name='version' value='1.0'/>-->
+    <input type="" name='\{{index}}' value='\{{item}}' v-for="(index, item) of arrparams"/>
+    <input type="" name='timestamp' value='\{{timestamp}}'/>
+    <input id="payid" type='submit' value='确认' style=''>
+</form>
+

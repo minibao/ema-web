@@ -1,0 +1,34 @@
+{
+  "development": {
+    "bi": "http://192.168.11.2:8081",
+    "pf": "https://staging-platform.lemonade-game.com",
+    "pm": "http://192.168.10.104:8081/playerMaker-user"
+  },
+  "development1": {
+    "bi": "http://120.26.114.129:8082",
+    "pf": "https://platform.lemonade-game.com"
+  },
+  "development2": {
+    "bi": "http://120.26.114.129:8082",
+    "pf": "https://staging-platform.lemonade-game.com",
+    "pm": "http://192.168.10.104:8081/playerMaker-user"
+  },
+  "test": {
+  },
+  "staging": {
+    "bi": "http://10.51.0.37:8082",
+    "pf": "https://staging-platform.lemonade-game.com",
+    "STATIC_URL": "https://cdn.emagames.cn/platform/social/static"
+  },
+  "production2": {
+    "bi": "http://10.26.234.231:8080",
+    "pf": "https://platform.lemonade-game.com",
+    "STATIC_URL1": "https://cdn.emagames.cn/platform/social/static"
+  },
+  "production": {
+    "bi": "http://192.168.11.2:8081",
+    "pf": "https://staging-platform.lemonade-game.com",
+    "pm": "http://192.168.10.104:8081/playerMaker-user"
+  }
+}
+

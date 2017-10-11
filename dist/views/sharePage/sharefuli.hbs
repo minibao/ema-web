@@ -1,0 +1,42 @@
+{{#section "foot"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/sharePage/fushare.7e65ebbc.css'/>
+
+    <script src="{{@static_url}}/lib/layer/layer.js"></script>
+    <script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+{{/section}}
+<style>
+    .weui-tabbar {
+        display: none;
+    }
+
+    .weui-tab__panel {
+
+        padding-bottom: 0px;
+    }
+</style>
+<div class="frm">
+    <img class="girls" src="{{@static_url}}/images/usercenter/girls.fe996c2b.png" alt="">
+    <div class="btns">
+        <div class="down">下载游戏领取现金福利</div>
+        <div class="login">已有帐号登录</div>
+    </div>
+</div>
+<script>
+    $('.down').click(function () {
+        //layer.msg('下载游戏！');
+        location.href = "http://www.kingofmoba.com/m/";
+    })
+
+    $('.login').click(function () {
+//        util.delCookie("squid");//ddd
+//        util.delCookie("token");
+//        util.delCookie("accountId_shequ");
+        var url = location.href.split('/sharefuli')[0];
+        var goto = util.getCookie("goto");
+        if (goto == "active1") {
+            location.href = url + "?goto=active1";
+        } else {
+            location.href = url;
+        }
+    })
+</script>

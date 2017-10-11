@@ -1,0 +1,172 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-fuli {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: 0px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-fuli_grey {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -22px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-icon_account {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -118px -70px;
+  width: 25px;
+  height: 21px;
+}
+.sprite-icon_login {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: 0px 0px;
+  width: 213px;
+  height: 32px;
+}
+.sprite-icon_psd {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -118px -32px;
+  width: 24px;
+  height: 24px;
+}
+.sprite-icon_qq_login {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: 0px -70px;
+  width: 118px;
+  height: 38px;
+}
+.sprite-icon_t_zhmm {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -142px -32px;
+  width: 56px;
+  height: 10px;
+}
+.sprite-icon_wx_login {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: 0px -32px;
+  width: 118px;
+  height: 38px;
+}
+.sprite-shequ {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -44px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-shequ_grey {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -66px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-wode {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -88px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-wode_grey {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -110px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-x {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -198px -32px;
+  width: 10px;
+  height: 10px;
+}
+.sprite-zhanji {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -132px -108px;
+  width: 22px;
+  height: 22px;
+}
+.sprite-zhanji_grey {
+  background-image: url(../images/sprite.2924efce.png);
+  background-position: -154px -108px;
+  width: 22px;
+  height: 22px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  .sprite-fuli {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-fuli_grey {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_account {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_login {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_psd {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_qq_login {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_t_zhmm {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-icon_wx_login {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-shequ {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-shequ_grey {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-wode {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-wode_grey {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-x {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-zhanji {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+  .sprite-zhanji_grey {
+    background-image: url(../images/sprite@2x.dd7e100a.png);
+    background-size: 213px 130px;
+  }
+}

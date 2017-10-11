@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="description" content="{{description}}">
+    <meta name="robots" content="{{keywords}}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link rel="Shortcut Icon" href="{{@static_url}}/images/favicon.ico" type="image/x-icon"/>
+    <link rel='stylesheet' href='{{@static_url}}/lib/weui/weui.min.css'/>
+    <link rel="stylesheet" href="{{@static_url}}/lib/vux/vux.css">
+    <link rel="stylesheet" href="{{@static_url}}/styles/example.css">
+    <link rel="stylesheet" href="{{@static_url}}/styles/sprite.css">
+    <link rel="stylesheet" href="{{@static_url}}/styles/sprite2.css">
+    <link rel="stylesheet" href="{{@static_url}}/styles/common.css">
+    <script src="{{@static_url}}/lib/vue.min.js"></script>
+    <script src="{{@static_url}}/lib/jQuery/jquery.min.js"></script>
+    <script src="{{@static_url}}/scripts/common.js"></script>
+    <script src="{{@static_url}}/lib/layer/layer.js"></script>
+    <!--<script type="text/javascript" src="{{@static_url}}/lib/qc_loader.js" data-appid="1105564847" data-redirecturi="https://staging-social.lemonade-game.com"  charset="utf-8"></script>-->
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script src="{{@static_url}}/lib/wechat.js"></script>
+    {{{sections.head}}}
+</head>
+<body>
+<div id="app">
+
+    <div class="container" id="container">
+        <div class="page tabbar js_show">
+            <section class="page__bd" style="height: 100%">
+                <div class="weui-tab">
+                    {{{sections.header}}}
+                    <div class="weui-tab__panel">
+                        {{{body}}}
+                    </div>
+                    {{#unless noFooter}}
+                        {{> footer_yinling}}
+                    {{/unless}}
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="loadingToast" class="weui_loading_toast" style="display:none;">
+        <div class="weui_mask_transparent"></div>
+        <div class="weui_toast">
+            <div class="weui_loading">
+                <!-- :)111 -->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_0"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_1"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_2"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_3"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_4"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_5"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_6"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_7"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_8"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_9"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_10"></div>-->
+                <!--<div class="weui_loading_leaf weui_loading_leaf_11"></div>-->
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                    <div class="rect6"></div>
+                </div>
+            </div>
+            <p class="weui_toast_content">数据加载中</p>
+        </div>
+    </div>
+</div>
+
+{{{sections.foot}}}
+<!--站长统计-->
+<div style="display: none">
+    <script src="https://s22.cnzz.com/z_stat.php?id=1262790900&web_id=1262790900" language="JavaScript"></script>
+</div>
+</body>
+</html>

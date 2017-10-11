@@ -1,0 +1,50 @@
+{{#section "head"}}
+    <link rel='stylesheet' href='{{@static_url}}/styles/apps/ciyuan.d8446fcc.css'/>
+    <!--<script type="text/javascript" src="{{@static_url}}/lib/qc_loader.js" data-appid="101399880"-->
+    <!--data-redirecturi="https://social.lemonade-game.com" charset="utf-8"></script>-->
+    <!--<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101399880"  data-redirecturi="https://social.lemonade-game.com" charset="utf-8"></script>-->
+{{/section}}
+
+{{#section "foot"}}
+    <script src="{{@static_url}}/scripts/apps/ciyuan.00fff684.js"></script>
+{{/section}}
+<div class="selectsever">
+    <div @click="relogin()" class="re-login"><img src="{{@static_url}}/images/login/relogin.db7ea638.png" alt=""></div>
+    <div class="selectbox">
+        <p>亲爱的召唤师，请选择您的区服以及角色</p>
+        <div class="weui-cell weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏区服</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select id="select-server" class="weui-select" name="select1">
+                    <option value="-1">请选择大区</option>
+                    <option value="23002">天空之城</option>
+                    <option value="23000">天使之门</option>
+                    <option value="23003">绯红暴君</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after" v-if="loginStyle">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏角色</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select id="select-role" class="weui-select" name="select2">
+                    <option value="0">请选择角色</option>
+                    <option  v-if="item"  value="\{{item.registSource}}" v-for="item of role">\{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="weui-cell weui-cell_select weui-cell_select-after" v-if="!loginStyle">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">游戏角色</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" v-model="nickName" type="text" placeholder="请输入角色名"/>
+            </div>
+        </div>
+        <div class="weui-cells__tips">\{{tips}}</div>
+    </div>
+    <div class="btn-box"><img @click="transfer()" src="{{@static_url}}/images/login/select-btn.243a2d05.png" alt=""></div>
+</div>

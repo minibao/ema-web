@@ -1,0 +1,77 @@
+.weui-tab__panel {
+  padding-bottom: 0px;
+}
+.frm {
+  color: #000;
+  width: 100%;
+  height: 100%;
+  background: #b9ced6;
+  font-size: 16px;
+}
+.frm .topbar {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.frm .topbar span {
+  position: relative;
+  padding: 5px 20px;
+  background: #61abe2;
+  top: 20px;
+  left: 20px;
+}
+.frm .swiperBox {
+  width: 100%;
+  height: 400px;
+  background: rgba(0, 255, 233, 0.36);
+  position: absolute;
+  top: 50%;
+  margin-top: -200px;
+}
+.frm .swiperBox .swiperscene {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  background: #cc9393;
+}
+.frm .swiperBox .swiperscene .swiper-container,
+.frm .swiperBox .swiperscene .swiper-wrapper,
+.frm .swiperBox .swiperscene swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.frm .swiperBox .swiperscene .slider {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.frm .swiperBox .swiperscene .slider p {
+  width: 100%;
+  height: 100%;
+  line-height: 300px;
+}
+.frm .swiperBox .swiperscene .slider p img {
+  vertical-align: middle;
+}
+.frm .swiperBox .swiperscene .slider .ti {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+.frm .swiperBox .swiperguide {
+  width: 100%;
+  height: 100px;
+  background: #449fc3;
+}
+.frm .swiperBox .swiperguide .swiper-container,
+.frm .swiperBox .swiperguide .swiper-wrapper,
+.frm .swiperBox .swiperguide swiper-slide {
+  height: 100%;
+}
+.frm .swiperBox .swiperguide .swiper-slide {
+  height: 100%;
+}
+.frm .swiperBox .swiperguide .swiper-slide img {
+  height: 100%;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>EMA-摇数字</title>
+    <link rel='stylesheet' href='../../static/styles/activelottery.css'/>
+    <link rel='stylesheet' href='../../static/styles/styleCJ.css'/>
+    <link rel='stylesheet' href='../../static/styles/shakenum.css'/>
+    <script src="../../static/lib/jQuery/jquery.js"></script>
+    <script src="../../static/scripts/shakenum.js"></script>
+</head>
+<body>
+<div class="frm">
+    <div class="top">
+        <p class="bw fw">欢迎天使之门的XXX来到福利中心</p>
+        <p>您在福利中心的现金额度为：<span class="col1">12.37</span>元</p>
+        <div class="list">
+            <p class="center l-title">大奖记录</p>
+            <p>天使之门的AAA抽到iPhone7</p>
+            <p>天使之门的AAA抽到iPhone7</p>
+            <p>天使之门的AAA抽到iPhone7</p>
+            <p>天使之门的AAA抽到iPhone7</p>
+        </div>
+    </div>
+    <div class="center">福利区</div>
+    <div class="fuli" style="height: 300px;">
+        <div class="five-num">
+            <div class="num_box">
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+            </div>
+            <div class="btn">摇起来</div>
+            <div class="result">结果:</div>
+        </div>
+    </div>
+    <div class="center">福利券</div>
+    <div class="fuliquan">
+        <div>
+            <div class="tiyan twoj center">
+                <span class="quanicon">体验券</span>
+                <span class="quanadd">+</span>
+            </div>
+            <div class="jingyin twoj center">
+                <span class="quanicon">精英券</span>
+                <span class="quanadd">+</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        var w = $(".num").width();
+         window.h = w * 1.5;
+        $('.num_box').css('height',h+'px');
+        $('.num').css('height',h+'px');
+        w = w * 265;
+    })
+    function numRand() {
+        var x = 999; //上限
+        var y = 00000; //下限
+        var rand = parseInt(Math.random() * (x - y + 1) + y);
+        return rand;
+    }
+    var isBegin = false;
+    $(function () {
+        var u = window.h;
+        $('.btn').click(function () {
+            if (isBegin) return false;
+            isBegin = true;
+            $(".num").css('backgroundPositionY', 0);
+            var result = numRand();
+            var resultStr = result.toString();
+            if(resultStr.length<5){
+                for(var i=resultStr.length;i<5;i++){
+                    resultStr = '0' + resultStr;
+                }
+                result = resultStr;
+            }
+
+            $('.result').html('结果:' + result);
+            var num_arr = (result + '').split('');
+            $(".num").each(function (index) {
+                var _num = $('.num').eq(4-index);
+                console.log(_num);
+                setTimeout(function () {
+                    _num.animate({
+                        backgroundPositionY: (u * 60) - (u * num_arr[4-index])
+                    }, {
+                        duration: 6000 + index * 3000,
+                        easing: "easeInOutCirc",
+                        complete: function () {
+                            if (index == 4) isBegin = false;
+                        }
+                    });
+                }, (index) * 30);
+            });
+        });
+    });
+</script>
+</body>
+</html>

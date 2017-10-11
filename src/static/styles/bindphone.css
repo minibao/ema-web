@@ -1,0 +1,844 @@
+@charset "utf-8";
+/* CSS Document */
+HTML {
+  COLOR: #000;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Arial, HelveticaNeue, Helvetica-Neue, Helvetica, "BBAlpha Sans", sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+.weui-tab__panel {
+  background-color: #EEEEEE;
+}
+BODY,
+DIV,
+DL,
+DT,
+DD,
+UL,
+OL,
+LI,
+H1,
+H2,
+H3,
+H4,
+H5,
+H6,
+PRE,
+CODE,
+FORM,
+FIELDSET,
+LEGEND,
+INPUT,
+BUTTON,
+TEXTAREA,
+P,
+BLOCKQUOTE,
+TH,
+TD,
+IMG {
+  PADDING: 0px;
+  MARGIN: 0px;
+}
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+TABLE {
+  BORDER-SPACING: 0;
+  BORDER-COLLAPSE: collapse;
+}
+ADDRESS,
+CAPTION,
+CITE,
+CODE,
+DFN,
+EM,
+STRONG,
+TH,
+VAR,
+OPTGROUP {
+  FONT-STYLE: inherit;
+  FONT-WEIGHT: inherit;
+}
+DEL,
+INS {
+  TEXT-DECORATION: none;
+}
+LI {
+  LIST-STYLE-TYPE: none;
+  LIST-STYLE-IMAGE: none;
+}
+CAPTION,
+TH {
+  TEXT-ALIGN: left;
+}
+H1,
+H2,
+H3,
+H4,
+H5,
+H6 {
+  FONT-SIZE: 100%;
+  FONT-WEIGHT: normal;
+}
+Q:before {
+  CONTENT: '';
+}
+Q:after {
+  CONTENT: '';
+}
+ABBR,
+ACRONYM {
+  BORDER: 0px;
+  FONT-VARIANT: normal;
+}
+SUP,
+SUB {
+  VERTICAL-ALIGN: baseline;
+}
+LEGEND {
+  COLOR: #000;
+}
+INPUT,
+BUTTON,
+TEXTAREA,
+SELECT,
+OPTGROUP,
+OPTION {
+  FONT-STYLE: inherit;
+  FONT-FAMILY: inherit;
+  FONT-SIZE: inherit;
+  FONT-WEIGHT: inherit;
+}
+/*闭合浮动*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  display: inline-block;
+}
+.clearfix {
+  display: block;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+}
+a,
+input,
+button {
+  outline: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background: #eee;
+  font-size: 62.5%;
+  font-weight: 400;
+}
+#page {
+  width: 100%;
+  margin: 0 auto;
+}
+#uerinfo {
+  background: #ff7111;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  display: block;
+}
+.icoin img {
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
+}
+.m_icoin img {
+  height: 2.5rem;
+  width: 2.5rem;
+  vertical-align: middle;
+}
+.succtipct {
+  width: 18rem;
+  margin: 0 auto;
+}
+.succinfo {
+  margin-left: 4rem;
+}
+.titleinfo {
+  font-size: 1rem;
+  line-height: 2.5rem;
+}
+.sminfo {
+  font-size: 0.7rem;
+  color: #666;
+  line-height: 1rem;
+}
+.smllbtn {
+  background: #eee none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #000;
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 0.2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+.succtipct .m_icoin {
+  float: left;
+}
+.userhead img {
+  width: 4rem;
+  height: 4rem;
+}
+#nickname {
+  font-size: 1.7em;
+  font-weight: bold;
+  padding: 1rem;
+}
+#txt_nickname {
+  color: #333;
+  border: 0;
+  text-align: center;
+  height: 2rem;
+  line-height: 2rem;
+  vertical-align: middle;
+}
+.bt_libaolist {
+  padding-left: 2.4rem;
+}
+#btn_modify {
+  height: 1rem;
+  width: 1rem;
+}
+#useraccount {
+  font-size: 1.2em;
+}
+.menulist {
+  background: #fff;
+  border-top: 0.1em solid #ddd;
+  border-bottom: 0.1em solid #ddd;
+  margin-top: 1.5em;
+}
+.menulist li {
+  font-size: 1rem;
+  border-bottom: 0.1em solid #ddd;
+}
+.menulist li:last-child a {
+  border-bottom: 0;
+}
+.menulist li a {
+  color: #666;
+  text-decoration: none;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  display: block;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.menulist li.b_none {
+  border-bottom: none;
+}
+.menulist li.txt-li span {
+  text-align: center;
+  display: block;
+  font-size: 0.8rem;
+}
+.menulist li.txt-li span a {
+  color: #ff7111;
+  text-decoration: none;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  display: inline-block;
+  border-bottom: 0.1em solid #ddd;
+  padding: 0;
+  position: relative;
+}
+.menulist li div.show_info {
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  border-top: 0.1rem solid #f1f1f1;
+  color: #666;
+}
+.menulist li div.show_info div {
+  padding-bottom: 0.5rem;
+}
+.menulist li div.show_info div span #amt_1 {
+  background: #ddd;
+  border: 0;
+  height: 1.5rem;
+  width: 35%;
+}
+.show_info .red_pk table {
+  max-width: 100%;
+  width: 100%;
+}
+.show_info .red_pk th {
+  line-height: 1rem;
+  height: 1.8rem;
+}
+.show_info .red_pk td {
+  border: 0.1rem solid #ddd;
+  text-align: center;
+  line-height: 1.8rem;
+  height: 1.8rem;
+  cursor: pointer;
+  vertical-align: top;
+}
+.show_info .red_pk td.current {
+  border: 0.15rem solid #ff7111;
+}
+.menulist li a b {
+  position: absolute;
+  left: 20px;
+}
+.tb_xgmm {
+  width: 48px;
+  height: 48px;
+  background-position: 0 -54px;
+}
+.tb_sjbd {
+  width: 48px;
+  height: 48px;
+  background-position: -58px -54px;
+}
+.tb_czqb {
+  width: 48px;
+  height: 48px;
+  background-position: -116px -54px;
+}
+.tb_yxyhq {
+  width: 48px;
+  height: 48px;
+  background-position: -174px -54px;
+}
+.tb_czjl {
+  width: 48px;
+  height: 48px;
+  background-position: -232px -54px;
+}
+.tb_zddlyx {
+  width: 48px;
+  height: 48px;
+  background-position: -290px -54px;
+}
+#ftip {
+  text-align: center;
+  color: #aaa;
+  padding-top: 1em;
+}
+#fbtns {
+  padding: 1em;
+  margin-top: 10%;
+}
+.fbtns#fbtns {
+  margin-top: 3%;
+}
+#fbtns_1 {
+  padding: 1em;
+}
+.tb_pullright {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+}
+.tb_pullright img {
+  height: 0.8rem;
+}
+.tb_pullright img.b_arrow {
+  height: 0.5rem;
+}
+.tb_pullright1 {
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+}
+.tb_pullright1 img {
+  height: 1.2rem;
+}
+.rightinfo {
+  position: absolute;
+  right: 70px;
+  color: #999;
+}
+.mybutton {
+  background: #ff7111;
+  border: 0;
+  border-radius: 0.3rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.mybutton_1 {
+  background: #fff;
+  border: 0;
+  border-radius: 0.3rem;
+  height: 3rem;
+  line-height: 3rem;
+  width: 100%;
+  color: #ff7111;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+.g_mybutton {
+  background: #999;
+  border: 0;
+  border-radius: 0.3em;
+  height: 3em;
+  line-height: 3em;
+  width: 100%;
+  color: #fff;
+  font-size: 1.4em;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+/*------修改个人信息页面------*/
+.detailinfo {
+  color: #999;
+  display: block;
+  padding: 0 2em 0 5em;
+  height: 3.2em;
+}
+.detailinfo select {
+  border: 0;
+  width: 100%;
+  background: none;
+  height: 3.2em;
+  padding: 0;
+  outline: none;
+  -webkit-appearance: none;
+}
+.detailinfo input {
+  border: 0;
+  background: none;
+  height: 100%;
+  width: 70%;
+}
+.menulist li .lineform {
+  color: #666;
+  text-decoration: none;
+  height: 3.2em;
+  line-height: 3.2em;
+  display: block;
+  border-bottom: 1px solid #ccc;
+  padding-left: 20px;
+  font-size: 1rem;
+  position: relative;
+}
+.menulist li .lineform b {
+  position: absolute;
+  left: 20px;
+}
+/*------绑定手机------*/
+.btn_dxyzm {
+  padding: 0 0.5rem;
+  height: 2rem;
+  border: 2px solid #ff7111;
+  position: absolute;
+  right: 1rem;
+  top: 0.5em;
+  border-radius: 5px;
+  line-height: 2em;
+  color: #ff7111;
+}
+.dxyzmimg {
+  padding: 0 0.5rem;
+  height: 2rem;
+  /*border:2px solid #ff7111;*/
+  position: absolute;
+  right: 1rem;
+  top: 0.5em;
+  /*border-radius:5px;*/
+  line-height: 2em;
+  color: #ff7111;
+}
+#getimgyzm img {
+  height: 2.2em;
+  width: 4.5em;
+  position: relative;
+  left: .1em;
+}
+/*------充值记录-------*/
+.rightdate {
+  font-size: 0.6em;
+}
+/*-------礼包-------*/
+.tabmenu {
+  background: #fff;
+}
+.left50 {
+  float: left;
+  width: 50%;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.left33 {
+  float: left;
+  width: 33.333%;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.tabmenu .onmenu {
+  border-top: 2px solid #ff7111;
+  color: #ff7111;
+}
+.tabmenu1 .onmenu {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  color: #ff7111;
+}
+.tabmenu1 .left50 {
+  border-top: 1px solid #ccc;
+}
+.lb_recommard {
+  margin-top: 1.5em;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1.5em 20px;
+  font-size: 1rem;
+}
+.leftimg {
+  float: left;
+}
+.leftimg img {
+  width: 4rem;
+  height: 4rem;
+}
+.recomgameinfo {
+  margin-left: 4.5rem;
+  position: relative;
+  min-height: 3.6em;
+}
+.recomgameinfo .gamename {
+  font-size: 1.2rem;
+  line-height: 200%;
+  cursor: pointer;
+}
+.gamename a {
+  color: #333;
+}
+.gameinfo {
+  color: #999;
+  font-size: 0.8rem;
+  line-height: 200%;
+}
+.lb_more {
+  height: 3.2em;
+  line-height: 3.2em;
+  text-align: center;
+  color: #999;
+  font-size: 0.8rem;
+  display: block;
+}
+.tb_libao {
+  background-position: -50px -110px;
+  height: 44px;
+  width: 44px;
+}
+.menulist .libaotitle {
+  line-height: 3.6em;
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2rem;
+}
+#searchform {
+  margin: 10px 0 0;
+  position: relative;
+  padding-left: 1rem;
+  border: 1px solid #ccc;
+}
+.txt_search {
+  width: 100%;
+  height: 2.6rem;
+  border: 0;
+  font-size: 1rem;
+}
+#btn_lbsearch {
+  position: absolute;
+  right: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  background-color: #eee;
+  top: 0;
+  border-left: 1px solid #ccc;
+}
+.tb_search {
+  display: inline-block;
+  padding: 8px;
+}
+.title1 {
+  font-size: 1.4em;
+  color: #999;
+  margin-bottom: 1rem;
+}
+.title1 span {
+  padding-left: 20px;
+  border-left: 4px solid #ff7111;
+  display: block;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 1rem;
+}
+.lb_content {
+  color: #666;
+  line-height: 200%;
+  font-size: 0.8rem;
+}
+.copyjhm {
+  margin: 20px 0 0;
+  position: relative;
+}
+.copyform {
+  height: 2.6em;
+  line-height: 2.6em;
+  border: 1px solid #ccc;
+  padding-left: 20px;
+  color: #666;
+  position: relative;
+}
+.txt_copy {
+  height: 2.6em;
+  line-height: 2.6em;
+  border: 0;
+  color: #ff7111;
+  position: absolute;
+  /**left: 5.5rem;**/
+}
+.btn_copy {
+  position: absolute;
+  right: -1px;
+  width: 4em;
+  height: 2.6em;
+  line-height: 2.6em;
+  text-align: center;
+  background-color: #ff7111;
+  top: 0;
+  color: #fff;
+  border-left: 1px solid #ccc;
+}
+.link_lbdetail {
+  color: #000;
+  display: block;
+}
+.yudinginfo {
+  background: #eee;
+  position: relative;
+  height: 3.2em;
+  line-height: 3.2em;
+  margin: 0 -20px;
+  padding: 0 20px;
+}
+.btn_cancel {
+  position: absolute;
+  right: 1em;
+  width: 6em;
+  height: 2.2em;
+  line-height: 2.2em;
+  text-align: center;
+  background-color: #ff7111;
+  top: 0.5em;
+  color: #fff;
+  border-left: 1px solid #ccc;
+}
+.successtip {
+  background: #FDFFB6;
+  color: #ff7111;
+  line-height: 3.2em;
+  margin-top: 1.5em;
+  padding-left: 20px;
+}
+.successtip span {
+  vertical-align: middle;
+}
+.tb_succ {
+  width: 31px;
+  height: 31px;
+  background-position: -566px 0;
+}
+.normaltip {
+  position: fixed;
+  bottom: 1em;
+  height: 3.2em;
+  line-height: 3.2em;
+  opacity: 0.4;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  background: #000;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.tiplist {
+  padding: 20px 0 0 20px;
+}
+.tiplist li {
+  list-style: disc inside;
+  color: #ff7111;
+}
+.tiplist li span {
+  color: #999;
+}
+.bindsteps {
+  width: 20.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #fff;
+}
+.steppoint {
+  background: #ddd;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  border-radius: 2.5rem;
+  color: #666;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  vertical-align: middle;
+}
+.onstep {
+  background: #ff7111;
+  color: #fff;
+}
+.linkline {
+  vertical-align: middle;
+  border-top: 2px solid #ddd;
+  display: inline-block;
+  width: 6rem;
+}
+.tips {
+  color: #999;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+.tips ul {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.tips ul li {
+  list-style: decimal inside;
+  line-height: 1.6rem;
+}
+/*-----------帮助中心-----------*/
+.help_categories li {
+  float: left;
+  width: 50%;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  margin-top: -1px;
+  padding: 1rem 0;
+  box-sizing: border-box;
+}
+.help_categories li a {
+  display: inline-block;
+}
+.help_categories p {
+  padding: 0.8rem 0 0 0;
+  color: #666;
+}
+.help_categories li img {
+  border: none;
+  width: 4rem;
+}
+.questionlist li {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+}
+.questionlist li:last-child {
+  border-bottom: 0;
+}
+.questb {
+  float: left;
+  padding-top: 0.5rem;
+  margin-right: 5%;
+  width: 15%;
+}
+.questb img {
+  width: 3rem;
+  height: 3rem;
+}
+.questct {
+  float: left;
+  width: 80%;
+}
+.questitle {
+  height: 2rem;
+  line-height: 2rem;
+  color: #333;
+  position: relative;
+}
+.questime {
+  position: absolute;
+  right: 0;
+  font-size: 0.6rem;
+  color: #666;
+}
+.quescontent {
+  font-size: 0.8rem;
+  color: #666;
+}
+.helptitle {
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 4rem;
+}
+#qstypelist li {
+  float: left;
+  width: 50%;
+  line-height: 3rem;
+  font-size: 1rem;
+}
+.cusradio img {
+  width: 1.2rem;
+  height: 1.2rem;
+  vertical-align: middle;
+}
+.helpblock {
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 0 1rem;
+}
+.txt_helper {
+  border: 1px solid #ccc;
+  height: 2.4rem;
+  line-height: 2.4rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+.txt_helper input {
+  padding: 0.5rem;
+  border: 0;
+  width: 100%;
+}
+.txt-col1 {
+  color: #ff7111;
+}
