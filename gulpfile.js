@@ -1,6 +1,4 @@
-/**
- * Created by Cober on 2016/12/12.
- */
+
 var gulp = require('gulp');
 var del = require('del');
 var merge = require('merge-stream');
